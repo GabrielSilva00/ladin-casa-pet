@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { Wordmark } from "@/components/ui/Logo";
+import { isSupabaseConfigured } from "@/lib/supabase/server";
+import { Eyebrow } from "@/components/ui/Chip";
+import { Button } from "@/components/ui/Button";
 
 const NAV = [
   { href: "/admin/hoje", label: "Hoje", n: "01" },
@@ -12,6 +15,56 @@ const NAV = [
 ] as const;
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
+  // Modo sem banco: o painel não tem o que mostrar, então servimos um splash
+  // explicando como ativá-lo. Os agendamentos ainda chegam no WhatsApp.
+  if (!isSupabaseConfigured) {
+    return (
+      <div className="min-h-screen bg-noite text-osso grid place-items-center p-6" data-theme="dark">
+        <div className="max-w-xl text-center">
+          <Link href="/" aria-label="Site" className="inline-block">
+            <Wordmark className="[&_span]:text-osso" />
+          </Link>
+
+          <Eyebrow className="mt-10 block text-mate">Painel</Eyebrow>
+          <h1 className="mt-4 font-display text-h2 text-osso text-balance">
+            Painel em modo{" "}
+            <em className="italic text-mate" style={{ fontVariationSettings: "'opsz' 144, 'SOFT' 100, 'WONK' 1" }}>
+              repouso.
+            </em>
+          </h1>
+
+          <p className="mt-6 font-sans text-[17px] text-osso/80 leading-[1.6]">
+            Enquanto você estiver operando no <strong>modo WhatsApp</strong>, os
+            agendamentos dos tutores chegam direto no celular do estabelecimento.
+            Não há banco de dados para listar aqui — o painel ativa automaticamente
+            no próximo deploy em que as variáveis do Supabase estiverem presentes.
+          </p>
+
+          <div className="mt-10 border border-osso/15 corner-chamfer-sm p-6 bg-osso/5 text-left">
+            <div className="font-mono text-[10px] uppercase tracking-wider2 text-mate mb-3">
+              Para ligar o painel
+            </div>
+            <ol className="space-y-2 font-sans text-[14px] text-osso/85 list-decimal pl-5">
+              <li>Crie um projeto grátis em <a href="https://app.supabase.com" target="_blank" rel="noreferrer" className="underline-wavy">supabase.com</a></li>
+              <li>Aplique o SQL de <code className="font-mono text-mate">supabase/migrations/</code></li>
+              <li>Adicione <code className="font-mono text-mate">NEXT_PUBLIC_SUPABASE_URL</code>, <code className="font-mono text-mate">NEXT_PUBLIC_SUPABASE_ANON_KEY</code> e <code className="font-mono text-mate">SUPABASE_SERVICE_ROLE_KEY</code> na Vercel</li>
+              <li>Faça um redeploy — as 7 telas aparecem aqui</li>
+            </ol>
+            <p className="mt-4 font-mono text-[11px] uppercase tracking-wider2 text-osso/50">
+              Guia completo: <code className="text-mate">DEPLOY.md</code> → "Ligar o banco depois"
+            </p>
+          </div>
+
+          <div className="mt-10">
+            <Link href="/">
+              <Button className="bg-terracota">Voltar para o site</Button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-noite text-osso" data-theme="dark">
       <div className="grid grid-cols-12 min-h-screen">

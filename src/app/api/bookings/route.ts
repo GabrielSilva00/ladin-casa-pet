@@ -4,6 +4,7 @@ import { supabaseAdmin, isSupabaseConfigured } from "@/lib/supabase/server";
 import { sendWhatsApp, bookingConfirmationMessage } from "@/lib/integrations/whatsapp";
 import { sendEmail, bookingConfirmationEmail } from "@/lib/integrations/email";
 import { createCalendarEvent } from "@/lib/integrations/calendar";
+import { buildBookingWhatsappUrl } from "@/lib/booking/whatsapp-url";
 import { parseDateISO, formatFull } from "@/lib/booking/availability";
 import { brl } from "@/lib/utils";
 
@@ -17,6 +18,17 @@ export async function POST(req: Request) {
   }
 
   const data = parsed.data;
+
+  // ─── Modo WhatsApp-only (sem banco) ─────────────────────
+  // Se o Supabase não está configurado, devolvemos um link do wa.me
+  // com a mensagem do agendamento pronta; o front-end abre esse link
+  // em nova aba e o tutor envia direto para o estabelecimento.
+  if (!isSupabaseConfigured) {
+    const whatsappUrl = buildBookingWhatsappUrl(data);
+    return NextResponse.json({ ok: true, mode: "whatsapp", whatsappUrl });
+  }
+
+  // ─── Modo completo (com Supabase) ───────────────────────
   const duration = totalDurationMin(data.serviceIds);
   const total = totalFor(data.serviceIds, data.size, data.coat);
   const startISO = `${data.date}T${data.time}:00-03:00`;
@@ -28,81 +40,75 @@ export async function POST(req: Request) {
 
   let bookingId: string | null = null;
 
-  if (isSupabaseConfigured) {
-    try {
-      const sb = supabaseAdmin();
+  try {
+    const sb = supabaseAdmin();
+    const phoneDigits = data.phone.replace(/\D/g, "");
 
-      // upsert client by phone
-      const phoneDigits = data.phone.replace(/\D/g, "");
-      const { data: client, error: clientErr } = await sb
-        .from("clients")
-        .upsert(
-          { name: data.tutorName, phone: phoneDigits, email: data.email || null, source: data.source ?? null, notes: data.notes || null },
-          { onConflict: "phone" }
-        )
-        .select()
-        .single();
-      if (clientErr) throw clientErr;
+    const { data: client, error: clientErr } = await sb
+      .from("clients")
+      .upsert(
+        { name: data.tutorName, phone: phoneDigits, email: data.email || null, source: data.source ?? null, notes: data.notes || null },
+        { onConflict: "phone" }
+      )
+      .select()
+      .single();
+    if (clientErr) throw clientErr;
 
-      // upsert pet by client + name
-      const { data: existingPet } = await sb
+    const { data: existingPet } = await sb
+      .from("pets")
+      .select("*")
+      .eq("client_id", client.id)
+      .eq("name", data.petName)
+      .maybeSingle();
+
+    let pet = existingPet;
+    if (!pet) {
+      const { data: created, error } = await sb
         .from("pets")
-        .select("*")
-        .eq("client_id", client.id)
-        .eq("name", data.petName)
-        .maybeSingle();
-
-      let pet = existingPet;
-      if (!pet) {
-        const { data: created, error } = await sb
-          .from("pets")
-          .insert({
-            client_id: client.id,
-            name: data.petName,
-            species: data.species,
-            size: data.size,
-            coat: data.coat
-          })
-          .select()
-          .single();
-        if (error) throw error;
-        pet = created;
-      }
-
-      const { data: booking, error: bookingErr } = await sb
-        .from("bookings")
         .insert({
-          pet_id: pet!.id,
           client_id: client.id,
-          service_ids: data.serviceIds,
-          scheduled_at: startISO,
-          duration_min: duration,
-          total_price_cents: total,
-          notes: data.notes || null,
-          status: "confirmed"
+          name: data.petName,
+          species: data.species,
+          size: data.size,
+          coat: data.coat
         })
         .select()
         .single();
-      if (bookingErr) throw bookingErr;
-      bookingId = booking.id;
-
-      // calendar
-      const { id: eventId } = await createCalendarEvent({
-        summary: `${data.petName} · ${serviceNames.join(" + ")}`,
-        description: `${data.tutorName} — ${phoneDigits}\n${data.notes ?? ""}`,
-        startISO,
-        endISO: end.toISOString()
-      });
-      if (eventId) {
-        await sb.from("bookings").update({ external_calendar_event_id: eventId }).eq("id", booking.id);
-      }
-    } catch (err) {
-      console.error("[bookings] supabase error", err);
-      return NextResponse.json({ error: "Falha ao registrar agendamento" }, { status: 500 });
+      if (error) throw error;
+      pet = created;
     }
+
+    const { data: booking, error: bookingErr } = await sb
+      .from("bookings")
+      .insert({
+        pet_id: pet!.id,
+        client_id: client.id,
+        service_ids: data.serviceIds,
+        scheduled_at: startISO,
+        duration_min: duration,
+        total_price_cents: total,
+        notes: data.notes || null,
+        status: "confirmed"
+      })
+      .select()
+      .single();
+    if (bookingErr) throw bookingErr;
+    bookingId = booking.id;
+
+    const { id: eventId } = await createCalendarEvent({
+      summary: `${data.petName} · ${serviceNames.join(" + ")}`,
+      description: `${data.tutorName} — ${phoneDigits}\n${data.notes ?? ""}`,
+      startISO,
+      endISO: end.toISOString()
+    });
+    if (eventId) {
+      await sb.from("bookings").update({ external_calendar_event_id: eventId }).eq("id", booking.id);
+    }
+  } catch (err) {
+    console.error("[bookings] supabase error", err);
+    return NextResponse.json({ error: "Falha ao registrar agendamento" }, { status: 500 });
   }
 
-  // Confirmações (whatsapp + email). Em modo stub, apenas log.
   const dateLabel = formatFull(parseDateISO(data.date));
 
   await sendWhatsApp({
@@ -132,5 +138,5 @@ export async function POST(req: Request) {
     });
   }
 
-  return NextResponse.json({ ok: true, id: bookingId });
+  return NextResponse.json({ ok: true, mode: "db", id: bookingId });
 }

@@ -12,9 +12,9 @@ export async function middleware(req: NextRequest) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-  // If Supabase isn't wired yet, let it through in dev (unprotected) but warn in console.
+  // Modo WhatsApp-only (sem Supabase): o próprio layout de /admin serve um
+  // splash de "painel em repouso", não há dados a proteger — deixamos passar.
   if (!url || !key) {
-    console.warn("[middleware] /admin não protegido — defina SUPABASE env vars.");
     return NextResponse.next();
   }
 

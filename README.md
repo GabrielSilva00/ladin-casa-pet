@@ -28,16 +28,27 @@ editorial, sem clichês de pet shop.
 
 ---
 
+## Dois modos de operação
+
+O projeto tem dois modos, chaveados pela presença (ou não) das variáveis
+Supabase em runtime:
+
+| Modo | Quando | O que acontece ao confirmar o agendamento |
+| --- | --- | --- |
+| **WhatsApp-only** (default) | Nenhuma var Supabase definida | Abre o WhatsApp do estabelecimento com a mensagem pronta; tutor envia manualmente. `/admin` mostra um splash "em repouso". |
+| **Com banco** | 3 vars Supabase configuradas | Salva no Postgres + dispara WhatsApp e e-mail para o tutor (se chaves plugadas) + cria evento no Google Calendar (se service account plugada). `/admin` ativa com as 7 telas. |
+
+Não precisa escolher agora — o default é o modo WhatsApp-only. Quando quiser
+o painel, é só adicionar as 3 variáveis na Vercel e dar redeploy.
+
 ## Rodando local
 
 ```bash
 # 1. deps
 npm install
 
-# 2. env
+# 2. env (opcional em modo WhatsApp-only)
 cp .env.example .env.local
-# → preencha pelo menos NEXT_PUBLIC_SUPABASE_URL + ANON_KEY + SERVICE_ROLE_KEY
-#   (sem elas, a landing roda; o agendamento roda em "modo stub" — loga em console)
 
 # 3. dev
 npm run dev

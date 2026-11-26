@@ -33,9 +33,18 @@ export function StepReview() {
       });
       if (!res.ok) throw new Error("Falha ao agendar");
       const data = await res.json();
-      toast.success("Agendamento confirmado — enviamos tudo no seu WhatsApp.");
-      reset();
-      router.push(`/agendar/confirmado?id=${data.id ?? ""}`);
+
+      if (data.mode === "whatsapp" && data.whatsappUrl) {
+        // Modo sem banco: abre o WhatsApp do estabelecimento com a mensagem pronta.
+        window.open(data.whatsappUrl, "_blank", "noopener,noreferrer");
+        toast.success("Abrindo WhatsApp — toque enviar pra confirmar.");
+        reset();
+        router.push("/agendar/confirmado?modo=whatsapp");
+      } else {
+        toast.success("Agendamento confirmado — enviamos tudo no seu WhatsApp.");
+        reset();
+        router.push(`/agendar/confirmado?id=${data.id ?? ""}`);
+      }
     } catch (err) {
       toast.error("Não consegui registrar agora. Tenta de novo ou chama no WhatsApp.");
       console.error(err);
@@ -55,7 +64,6 @@ export function StepReview() {
         </h1>
       </header>
 
-      {/* Recibo editorial */}
       <article className="paper-texture border border-carvao/15 corner-chamfer-sm p-8 md:p-12 shadow-card">
         <div className="font-mono text-[11px] uppercase tracking-wider2 text-terracota">
           Cabana Pet Café · Vila Paraíso
@@ -120,10 +128,14 @@ export function StepReview() {
         ) : null}
       </article>
 
+      <p className="font-mono text-[11px] uppercase tracking-wider2 text-carvao/55">
+        Ao confirmar, o seu WhatsApp abre com o pedido pronto. É só tocar enviar.
+      </p>
+
       <div className="flex items-center justify-between gap-3">
         <Button variant="ghost" onClick={() => goto("tutor")}>Voltar</Button>
         <Button onClick={submit} disabled={submitting}>
-          {submitting ? "Confirmando…" : "Confirmar agendamento"}
+          {submitting ? "Abrindo WhatsApp…" : "Confirmar e abrir WhatsApp"}
         </Button>
       </div>
     </div>
