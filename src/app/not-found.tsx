@@ -9,12 +9,12 @@ export default function NotFound() {
         <Eyebrow>404</Eyebrow>
         <h1 className="mt-4 font-display text-h1 text-carvao text-balance">
           Essa trilha não{" "}
-          <em className="italic text-terracota" style={{ fontVariationSettings: "'opsz' 144, 'SOFT' 100, 'WONK' 1" }}>
+          <em className="italic text-terracota">
             leva à clareira.
           </em>
         </h1>
         <p className="mt-6 max-w-[42ch] mx-auto font-sans text-[17px] text-carvao/70">
-          A página que você procurava não existe — ou se perdeu entre as árvores.
+          A página que você procurava não existe. Ou se perdeu entre as árvores.
         </p>
         <Link href="/" className="inline-block mt-10">
           <Button>Voltar para a home</Button>

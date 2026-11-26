@@ -7,7 +7,7 @@ import { InputField, TextareaField } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Chip";
 import { useBooking } from "./BookingContext";
-import { formatPhone } from "@/lib/utils";
+import { formatPhone, cn } from "@/lib/utils";
 
 const SOURCES = [
   { value: "instagram", label: "Instagram" },
@@ -39,8 +39,8 @@ export function StepTutor() {
     <form onSubmit={handleSubmit(setTutor)} className="space-y-10">
       <header>
         <Eyebrow>Passo 04 · Sobre você</Eyebrow>
-        <h1 className="mt-3 font-display text-h2 text-carvao text-balance">
-          Pra gente te avisar quando tudo estiver pronto.
+        <h1 className="mt-3 font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.02] tracking-[-0.025em] text-carvao text-balance">
+          Para avisar quando estiver pronto.
         </h1>
       </header>
 
@@ -67,9 +67,9 @@ export function StepTutor() {
           {...register("email")}
         />
 
-        <div className="pt-6">
-          <div className="pb-3 font-mono text-[11px] uppercase tracking-wider2 text-terracota">
-            Como você conheceu a gente?
+        <div className="pt-7">
+          <div className="pb-3 font-sans text-[11px] uppercase tracking-[0.14em] text-terracota font-medium">
+            Como conheceu a gente?
           </div>
           <div className="flex flex-wrap gap-2">
             {SOURCES.map((s) => {
@@ -79,7 +79,10 @@ export function StepTutor() {
                   type="button"
                   key={s.value}
                   onClick={() => setValue("source", s.value, { shouldValidate: true })}
-                  className={`rounded-full border px-4 py-2 font-sans text-[13px] transition-all ${active ? "border-terracota bg-terracota text-osso" : "border-carvao/30 text-carvao hover:border-terracota"}`}
+                  className={cn(
+                    "rounded-full border px-5 py-2.5 font-sans text-[13px] font-medium transition-all active:scale-[0.97]",
+                    active ? "border-terracota bg-terracota text-osso" : "border-carvao/20 text-carvao hover:border-terracota"
+                  )}
                 >
                   {s.label}
                 </button>

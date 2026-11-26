@@ -20,7 +20,7 @@ export default async function ConfigPage() {
         <div className="border border-osso/10 corner-chamfer-sm p-6 bg-osso/5">
           <div className="font-mono text-[10px] uppercase tracking-wider2 text-mate mb-2">Horário</div>
           <div className="font-display text-[24px] text-osso">
-            {work?.start ?? "09:00"} — {work?.end ?? "18:00"}
+            {work?.start ?? "09:00"} às {work?.end ?? "18:00"}
           </div>
           <div className="mt-1 font-sans text-[13px] text-osso/65">
             Dias: {(work?.days ?? [2,3,4,5,6]).join(", ")} (0=dom, 6=sáb)
@@ -52,7 +52,7 @@ export default async function ConfigPage() {
       </section>
 
       <p className="mt-10 font-mono text-[11px] uppercase tracking-wider2 text-osso/40">
-        Edição inline + mensagens automáticas de WhatsApp — próxima entrega.
+        Edição inline e mensagens automáticas de WhatsApp. Próxima entrega.
       </p>
     </div>
   );

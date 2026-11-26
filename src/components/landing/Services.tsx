@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Eyebrow } from "@/components/ui/Chip";
-import { Rule } from "@/components/ui/Card";
 import { SERVICES } from "@/content/site";
 import { brl } from "@/lib/utils";
 
@@ -9,24 +8,21 @@ export function Services() {
     <section id="servicos" className="py-section bg-osso">
       <div className="container">
         <div className="grid grid-cols-12 gap-6 items-end">
-          <div className="col-span-12 md:col-span-6">
+          <div className="col-span-12 md:col-span-7">
             <Eyebrow>O que a gente faz</Eyebrow>
-            <h2 className="mt-4 font-display text-h1 text-carvao text-balance">
-              Três serviços.{" "}
-              <em className="italic text-terracota" style={{ fontVariationSettings: "'opsz' 144, 'SOFT' 100, 'WONK' 1" }}>
-                Uma só tarde.
-              </em>
+            <h2 className="mt-4 font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.98] tracking-[-0.025em] text-carvao text-balance">
+              Três serviços. <em className="italic text-terracota">Uma só tarde.</em>
             </h2>
           </div>
-          <div className="col-span-12 md:col-span-4 md:col-start-9 font-sans text-[15px] text-carvao/70">
-            Dá para fazer os três no mesmo dia. Ou só um. Ou só ficar. A tarde é sua.
-          </div>
+          <p className="col-span-12 md:col-span-4 md:col-start-9 font-sans text-[15px] text-carvao/70">
+            Faz os três no mesmo dia. Ou só um. Ou só fica.
+          </p>
         </div>
 
         <ul className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6">
           {SERVICES.map((s) => (
             <li key={s.slug} className="group">
-              <article className="relative bg-osso corner-chamfer border border-carvao/10 shadow-card transition-all duration-300 group-hover:-translate-y-1.5 group-hover:shadow-warm">
+              <article className="relative bg-osso corner-chamfer border border-carvao/10 transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-[0_24px_48px_-24px_rgba(221,107,60,0.4)]">
                 <div className="relative aspect-square overflow-hidden warm-filter film-grain -ml-5 mt-5 mr-5 border border-carvao/10 corner-chamfer-sm bg-clorofila/15">
                   <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
@@ -43,18 +39,20 @@ export function Services() {
                     {s.n}
                   </span>
                   <h3 className="relative font-display text-[32px] leading-none text-carvao">{s.title}</h3>
-                  <Rule className="my-5" />
-                  <p className="font-sans text-[15px] leading-[1.55] text-carvao/75">{s.support}</p>
+                  <p className="mt-5 font-sans text-[15px] leading-[1.55] text-carvao/75">{s.support}</p>
 
                   <div className="mt-8 flex items-end justify-between">
-                    <span className="font-mono text-[11px] uppercase tracking-wider2 text-carvao/65">
-                      {s.fromCents > 0 ? `A partir de ${brl(s.fromCents)}` : "Faz parte da casa"}
+                    <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-carvao/60">
+                      {s.fromCents > 0 ? `a partir de ${brl(s.fromCents)}` : "cortesia"}
                     </span>
                     <Link
                       href={`/servicos/${s.slug}`}
-                      className="font-sans text-[13px] text-carvao transition-all hover:text-terracota"
+                      className="font-sans text-[13px] text-carvao transition-all hover:text-terracota inline-flex items-center gap-1.5"
                     >
-                      Saiba mais <span aria-hidden className="inline-block transition-transform group-hover:translate-x-1">→</span>
+                      Saiba mais
+                      <svg width="12" height="10" viewBox="0 0 12 10" className="transition-transform group-hover:translate-x-1" aria-hidden>
+                        <path d="M1 5h9M7 1l4 4-4 4" stroke="currentColor" strokeWidth="1.3" fill="none" strokeLinecap="round"/>
+                      </svg>
                     </Link>
                   </div>
                 </div>

@@ -7,11 +7,11 @@ import "@/styles/globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://cabanapetcafe.com.br"),
   title: {
-    default: "Cabana Pet Café — Banho, tosa e café em Campinas",
+    default: "Cabana Pet Café · Banho, tosa e café em Campinas",
     template: "%s · Cabana Pet Café"
   },
   description:
-    "Banho, tosa e café de especialidade ao ar livre em Vila Paraíso, Campinas. Só com hora marcada — uma clareira urbana para o seu bicho e para você.",
+    "Banho, tosa e café de especialidade ao ar livre em Vila Paraíso, Campinas. Só com hora marcada. Uma clareira urbana para o seu bicho e para você.",
   openGraph: {
     type: "website",
     locale: "pt_BR",

@@ -8,11 +8,8 @@ export function Testimonials() {
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-6">
             <Eyebrow>Palavra de quem já foi</Eyebrow>
-            <h2 className="mt-4 font-display text-h1 text-carvao text-balance">
-              Três tutores,{" "}
-              <em className="italic text-terracota" style={{ fontVariationSettings: "'opsz' 144, 'SOFT' 100, 'WONK' 1" }}>
-                três sábados.
-              </em>
+            <h2 className="mt-4 font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.98] tracking-[-0.025em] text-carvao text-balance">
+              Três tutores, <em className="italic text-terracota">três sábados.</em>
             </h2>
           </div>
         </div>
@@ -21,19 +18,14 @@ export function Testimonials() {
           {TESTIMONIALS.map((t, i) => (
             <li
               key={t.author}
-              className="relative paper-texture p-8 md:p-10 shadow-card border border-carvao/10 corner-chamfer-sm"
-              style={{ transform: `rotate(${t.rotate})` }}
+              className="relative paper-texture p-8 md:p-10 border border-carvao/10 corner-chamfer-sm"
+              style={{ transform: `rotate(${t.rotate})`, boxShadow: "0 12px 32px -20px rgba(15,14,12,0.25)" }}
             >
               <p className="font-display text-[clamp(22px,2vw,28px)] leading-[1.35] text-carvao">
-                {t.text}
+                “{t.text}”
               </p>
 
-              {/* Assinatura manuscrita (SVG placeholder) */}
-              <svg
-                viewBox="0 0 220 60"
-                className="mt-8 h-12 w-auto text-carvao"
-                aria-hidden
-              >
+              <svg viewBox="0 0 220 60" className="mt-8 h-12 w-auto text-carvao" aria-hidden>
                 <path
                   d={
                     i === 0
@@ -49,8 +41,8 @@ export function Testimonials() {
                 />
               </svg>
 
-              <div className="mt-4 font-mono text-[11px] uppercase tracking-wider2 text-carvao/60">
-                — {t.author} ({t.meta}) · {t.neighborhood}
+              <div className="mt-4 font-mono text-[11px] uppercase tracking-[0.14em] text-carvao/60">
+                {t.author} · {t.neighborhood}
               </div>
             </li>
           ))}

@@ -36,7 +36,7 @@ export function buildBookingWhatsappMessage(b: FullBooking): string {
   }
 
   lines.push(
-    "— — —",
+    "···",
     `Tutor: ${b.tutorName}`,
     `WhatsApp: ${b.phone}`
   );

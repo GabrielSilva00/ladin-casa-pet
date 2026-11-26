@@ -37,11 +37,11 @@ export function StepReview() {
       if (data.mode === "whatsapp" && data.whatsappUrl) {
         // Modo sem banco: abre o WhatsApp do estabelecimento com a mensagem pronta.
         window.open(data.whatsappUrl, "_blank", "noopener,noreferrer");
-        toast.success("Abrindo WhatsApp — toque enviar pra confirmar.");
+        toast.success("Abrindo WhatsApp. Toque enviar pra confirmar.");
         reset();
         router.push("/agendar/confirmado?modo=whatsapp");
       } else {
-        toast.success("Agendamento confirmado — enviamos tudo no seu WhatsApp.");
+        toast.success("Agendamento confirmado. Enviamos tudo no seu WhatsApp.");
         reset();
         router.push(`/agendar/confirmado?id=${data.id ?? ""}`);
       }

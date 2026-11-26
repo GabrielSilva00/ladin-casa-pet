@@ -10,31 +10,25 @@ export function Menu() {
         <div className="grid grid-cols-12 gap-6 items-end">
           <div className="col-span-12 md:col-span-7">
             <Eyebrow>Do café à cozinha</Eyebrow>
-            <h2 className="mt-4 font-display text-h1 text-carvao text-balance">
-              Comida de verdade,{" "}
-              <em className="italic text-terracota" style={{ fontVariationSettings: "'opsz' 144, 'SOFT' 100, 'WONK' 1" }}>
-                pra gente de verdade.
-              </em>
+            <h2 className="mt-4 font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.98] tracking-[-0.025em] text-carvao text-balance">
+              Curto, sazonal, <em className="italic text-terracota">fresco todo dia.</em>
             </h2>
-            <p className="mt-6 font-sans text-[17px] text-carvao/75 max-w-[38ch]">
-              Cardápio curto, sazonal, todo dia fresco. O seu bicho também tem o dele.
-            </p>
           </div>
-          <div className="col-span-12 md:col-span-3 md:col-start-10 font-mono text-[11px] uppercase tracking-wider2 text-carvao/55">
-            De terça a sábado
+          <div className="col-span-12 md:col-span-3 md:col-start-10 font-mono text-[11px] uppercase tracking-[0.14em] text-carvao/55">
+            Terça a sábado
             <br />
-            09:00 — 17:30
+            09:00 às 17:30
           </div>
         </div>
 
         <ul className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-14 gap-y-0">
-          {MENU_SAMPLE.map((item, idx) => (
+          {MENU_SAMPLE.map((item) => (
             <li
               key={item.name}
               className="group flex items-end justify-between gap-6 border-t border-carvao/15 py-6 last:border-b md:[&:nth-child(2)]:border-t md:[&:first-child]:border-t"
             >
               <div className="min-w-0">
-                <h3 className="font-display italic text-[24px] leading-none text-carvao" style={{ fontVariationSettings: "'opsz' 48, 'SOFT' 100, 'WONK' 1" }}>
+                <h3 className="font-display italic text-[24px] leading-none text-carvao">
                   {item.name}
                 </h3>
                 <p className="mt-2 font-sans text-[14px] text-carvao/65 truncate">{item.desc}</p>
@@ -47,13 +41,10 @@ export function Menu() {
           ))}
         </ul>
 
-        <div className="mt-14 flex items-center gap-4">
-          <Link href="/cardapio" className="font-sans text-[15px] text-carvao underline-wavy">
+        <div className="mt-14">
+          <Link href="/cardapio" className="font-sans text-[15px] text-carvao accent-wave">
             Ver cardápio completo
           </Link>
-          <span className="font-mono text-[11px] uppercase tracking-wider2 text-carvao/50">
-            atualizado semanalmente
-          </span>
         </div>
       </div>
     </section>

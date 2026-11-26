@@ -44,7 +44,7 @@ export default async function BloqueiosPage() {
       )}
 
       <p className="mt-10 font-mono text-[11px] uppercase tracking-wider2 text-osso/40">
-        Criação e edição com modal — próxima entrega.
+        Criação e edição com modal. Próxima entrega.
       </p>
     </div>
   );

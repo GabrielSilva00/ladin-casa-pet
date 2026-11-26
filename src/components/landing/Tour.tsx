@@ -19,17 +19,15 @@ export function Tour() {
         <div className="grid grid-cols-12 gap-6 items-end">
           <div className="col-span-12 md:col-span-6">
             <Eyebrow className="text-mate">O lugar</Eyebrow>
-            <h2 className="mt-4 font-display text-h1 text-osso text-balance">
-              Entre,{" "}
-              <em className="italic" style={{ fontVariationSettings: "'opsz' 144, 'SOFT' 100, 'WONK' 1" }}>fique,</em>{" "}
-              respire.
+            <h2 className="mt-4 font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.98] tracking-[-0.025em] text-osso text-balance">
+              Entre, <em className="italic">fique</em>, respire.
             </h2>
           </div>
           <div className="col-span-12 md:col-span-4 md:col-start-9 flex justify-end gap-2">
             <button
               type="button"
               onClick={() => scrollBy(-1)}
-              className="h-11 w-11 rounded-full border border-osso/40 text-osso transition-colors hover:bg-terracota hover:border-terracota"
+              className="h-11 w-11 rounded-full border border-osso/40 text-osso transition-all hover:bg-terracota hover:border-terracota active:scale-95"
               aria-label="Anterior"
             >
               ←
@@ -37,7 +35,7 @@ export function Tour() {
             <button
               type="button"
               onClick={() => scrollBy(1)}
-              className="h-11 w-11 rounded-full border border-osso/40 text-osso transition-colors hover:bg-terracota hover:border-terracota"
+              className="h-11 w-11 rounded-full border border-osso/40 text-osso transition-all hover:bg-terracota hover:border-terracota active:scale-95"
               aria-label="Próximo"
             >
               →
@@ -63,11 +61,11 @@ export function Tour() {
                 style={{ backgroundImage: `url(${item.src})` }}
                 aria-hidden
               />
-              <span className="absolute top-4 right-4 font-mono text-[10px] uppercase tracking-wider2 text-osso/80">
+              <span className="absolute top-4 right-4 font-mono text-[10px] uppercase tracking-[0.14em] text-osso/80">
                 {String(i + 1).padStart(2, "0")} / {String(TOUR.length).padStart(2, "0")}
               </span>
             </div>
-            <figcaption className="mt-3 pl-3 border-l-2 border-terracota font-mono text-[11px] uppercase tracking-wider2 text-osso/70">
+            <figcaption className="mt-3 pl-3 border-l-2 border-terracota font-mono text-[11px] uppercase tracking-[0.14em] text-osso/70">
               {item.caption}
             </figcaption>
           </figure>

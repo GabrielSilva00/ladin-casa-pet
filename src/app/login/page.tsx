@@ -40,7 +40,7 @@ function LoginForm() {
       <Eyebrow className="mt-10 block">Painel</Eyebrow>
       <h1 className="mt-3 font-display text-h2 text-carvao">Entre com o seu e-mail.</h1>
       <p className="mt-3 font-sans text-[15px] text-carvao/70">
-        Enviamos um link de acesso. Nada de senha — mais seguro assim.
+        Enviamos um link de acesso. Nada de senha, mais seguro assim.
       </p>
 
       <InputField

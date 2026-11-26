@@ -45,9 +45,12 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <span className="hidden lg:inline font-mono text-[11px] uppercase tracking-wider2 text-carvao/70">
-            Aberta · hoje até 18h
-          </span>
+          <Link
+            href="/gestao"
+            className="hidden lg:inline font-mono text-[11px] uppercase tracking-[0.14em] text-carvao/55 hover:text-terracota"
+          >
+            Painel
+          </Link>
           <Link
             href="/agendar"
             className="inline-flex items-center gap-2 rounded-btn bg-terracota px-5 py-2.5 font-sans text-[13px] font-medium text-osso transition-all hover:shadow-warm hover:-translate-y-[1px]"

@@ -16,15 +16,15 @@ export function StepIndicator() {
   const pct = ((stepIndex + 1) / totalSteps) * 100;
 
   return (
-    <div className="border-b border-carvao/10 bg-osso/80 backdrop-blur sticky top-0 z-30">
-      <div className="h-[2px] bg-terracota/20">
+    <div className="border-b border-carvao/10 bg-osso/85 backdrop-blur sticky top-0 z-30">
+      <div className="h-[2px] bg-terracota/15">
         <div
           className="h-full bg-terracota transition-all duration-500 ease-out"
           style={{ width: `${pct}%` }}
         />
       </div>
       <div className="container py-5 flex items-center justify-between gap-6 overflow-x-auto">
-        <ol className="flex items-center gap-4 text-[11px] font-mono uppercase tracking-wider2">
+        <ol className="flex items-center gap-4 text-[11px] font-mono uppercase tracking-[0.14em]">
           {STEP_IDS.map((id, i) => {
             const reached = state.reached[id];
             const active = state.current === id;
@@ -43,7 +43,7 @@ export function StepIndicator() {
                 >
                   <span
                     className={cn(
-                      "inline-flex h-6 w-6 items-center justify-center rounded-full border",
+                      "inline-flex h-6 w-6 items-center justify-center rounded-full border transition-all",
                       active && "border-terracota bg-terracota text-osso",
                       !active && reached && "border-carvao/60 text-carvao",
                       !reached && "border-carvao/20 text-carvao/40"

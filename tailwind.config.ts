@@ -11,14 +11,14 @@ const config: Config = {
     },
     extend: {
       colors: {
-        clorofila: "#2D5F3F",
-        terracota: "#B8502E",
-        osso: "#F4EDE0",
-        carvao: "#1A1512",
-        tamara: "#D4917A",
-        mate: "#E8C566",
-        noite: "#0F2419",
-        vinho: "#8B2E2E"
+        clorofila: "#15362A",
+        terracota: "#DD6B3C",
+        osso: "#F0E6D1",
+        carvao: "#0F0E0C",
+        tamara: "#E59F85",
+        mate: "#F0C454",
+        noite: "#071510",
+        vinho: "#7A2322"
       },
       fontFamily: {
         display: ["var(--font-display)", "Georgia", "serif"],

@@ -19,7 +19,7 @@ function Content() {
         {isWhatsapp ? (
           <>
             Toque{" "}
-            <em className="italic text-terracota" style={{ fontVariationSettings: "'opsz' 144, 'SOFT' 100, 'WONK' 1" }}>
+            <em className="italic text-terracota">
               enviar
             </em>{" "}
             no WhatsApp pra concluir.
@@ -27,7 +27,7 @@ function Content() {
         ) : (
           <>
             Seu horário está{" "}
-            <em className="italic text-terracota" style={{ fontVariationSettings: "'opsz' 144, 'SOFT' 100, 'WONK' 1" }}>
+            <em className="italic text-terracota">
               guardado.
             </em>
           </>
@@ -38,13 +38,13 @@ function Content() {
         {isWhatsapp ? (
           <>
             Abrimos o WhatsApp numa nova aba com todos os dados do agendamento
-            prontos. É só tocar <strong>enviar</strong> — a gente confirma o
+            prontos. É só tocar <strong>enviar</strong>. A gente confirma o
             horário por mensagem em instantes.
           </>
         ) : (
           <>
             Enviamos a confirmação pelo WhatsApp. Se precisar remarcar, é só
-            responder a mensagem — a gente dá um jeito.
+            responder a mensagem. A gente dá um jeito.
           </>
         )}
       </p>
@@ -73,7 +73,7 @@ function Content() {
       </div>
 
       <div className="mt-16 font-mono text-[11px] uppercase tracking-wider2 text-carvao/50">
-        Até lá — o café já está moído.
+        Até lá. O café já está moído.
       </div>
     </div>
   );

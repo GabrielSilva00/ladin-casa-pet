@@ -28,7 +28,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <Eyebrow className="mt-10 block text-mate">Painel</Eyebrow>
           <h1 className="mt-4 font-display text-h2 text-osso text-balance">
             Painel em modo{" "}
-            <em className="italic text-mate" style={{ fontVariationSettings: "'opsz' 144, 'SOFT' 100, 'WONK' 1" }}>
+            <em className="italic text-mate">
               repouso.
             </em>
           </h1>
@@ -36,7 +36,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <p className="mt-6 font-sans text-[17px] text-osso/80 leading-[1.6]">
             Enquanto você estiver operando no <strong>modo WhatsApp</strong>, os
             agendamentos dos tutores chegam direto no celular do estabelecimento.
-            Não há banco de dados para listar aqui — o painel ativa automaticamente
+            Não há banco de dados para listar aqui. O painel ativa automaticamente
             no próximo deploy em que as variáveis do Supabase estiverem presentes.
           </p>
 
@@ -48,18 +48,24 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               <li>Crie um projeto grátis em <a href="https://app.supabase.com" target="_blank" rel="noreferrer" className="underline-wavy">supabase.com</a></li>
               <li>Aplique o SQL de <code className="font-mono text-mate">supabase/migrations/</code></li>
               <li>Adicione <code className="font-mono text-mate">NEXT_PUBLIC_SUPABASE_URL</code>, <code className="font-mono text-mate">NEXT_PUBLIC_SUPABASE_ANON_KEY</code> e <code className="font-mono text-mate">SUPABASE_SERVICE_ROLE_KEY</code> na Vercel</li>
-              <li>Faça um redeploy — as 7 telas aparecem aqui</li>
+              <li>Faça um redeploy. As 7 telas aparecem aqui</li>
             </ol>
             <p className="mt-4 font-mono text-[11px] uppercase tracking-wider2 text-osso/50">
               Guia completo: <code className="text-mate">DEPLOY.md</code> → "Ligar o banco depois"
             </p>
           </div>
 
-          <div className="mt-10">
-            <Link href="/">
-              <Button className="bg-terracota">Voltar para o site</Button>
+          <div className="mt-10 flex items-center justify-center gap-4 flex-wrap">
+            <Link href="/gestao">
+              <Button className="bg-terracota">Abrir painel do dono</Button>
+            </Link>
+            <Link href="/" className="font-sans text-[14px] text-osso/70 hover:text-osso">
+              Voltar para o site
             </Link>
           </div>
+          <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.14em] text-osso/40">
+            O painel do dono funciona sem banco. Seus dados ficam no navegador.
+          </p>
         </div>
       </div>
     );

@@ -55,7 +55,7 @@ export default async function CardapioAdminPage() {
       </section>
 
       <p className="mt-8 font-mono text-[11px] uppercase tracking-wider2 text-osso/40">
-        CRUD completo (criar / editar / remover) — próxima entrega.
+        CRUD completo (criar, editar, remover). Próxima entrega.
       </p>
     </div>
   );

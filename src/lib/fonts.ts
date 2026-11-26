@@ -1,13 +1,14 @@
-import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
+import { Instrument_Serif, Manrope, JetBrains_Mono } from "next/font/google";
 
-export const fraunces = Fraunces({
+export const fraunces = Instrument_Serif({
   subsets: ["latin"],
   variable: "--font-display",
-  axes: ["SOFT", "WONK"],
+  weight: ["400"],
+  style: ["normal", "italic"],
   display: "swap"
 });
 
-export const inter = Inter({
+export const inter = Manrope({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap"

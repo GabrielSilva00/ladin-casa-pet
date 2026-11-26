@@ -37,7 +37,7 @@ export default async function HojePage() {
       {error ? (
         <EmptyState title="Supabase não está configurado." hint="Defina as variáveis NEXT_PUBLIC_SUPABASE_URL e SUPABASE_SERVICE_ROLE_KEY." />
       ) : bookings.length === 0 ? (
-        <EmptyState title="Dia leve." hint="Nenhum agendamento para hoje — aproveita um café." />
+        <EmptyState title="Dia leve." hint="Nenhum agendamento para hoje. Aproveita um café." />
       ) : (
         <ul className="mt-8 space-y-3">
           {bookings.map((b) => (

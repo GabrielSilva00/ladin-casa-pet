@@ -45,5 +45,5 @@ export const BRAND = {
   openHours: "Terça a Sábado · 09:00–18:00",
   closed: "Fechamos domingo e segunda (pra descansar junto)",
   foundedYear: 2024,
-  coords: { lat: -22.9015, lng: -47.0612 }
+  coords: { lat: -22.9303018, lng: -47.0484525 }
 } as const;

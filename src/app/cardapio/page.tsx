@@ -5,7 +5,7 @@ import { Eyebrow } from "@/components/ui/Chip";
 import { MENU_SAMPLE } from "@/content/site";
 import { brl } from "@/lib/utils";
 
-export const metadata = { title: "Cardápio — grãos, cozinha e petiscos" };
+export const metadata = { title: "Cardápio · grãos, cozinha e petiscos" };
 
 export default function CardapioPage() {
   return (
@@ -15,7 +15,7 @@ export default function CardapioPage() {
         <Eyebrow>Cardápio</Eyebrow>
         <h1 className="mt-4 font-display text-h1 text-carvao text-balance max-w-[18ch]">
           Curto, sazonal,{" "}
-          <em className="italic text-terracota" style={{ fontVariationSettings: "'opsz' 144, 'SOFT' 100, 'WONK' 1" }}>
+          <em className="italic text-terracota">
             todo dia fresco.
           </em>
         </h1>
