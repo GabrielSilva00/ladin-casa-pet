@@ -10,10 +10,10 @@ export function Hero() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: "url(/images/hero.png)",
+            backgroundImage: "url(/images/hero.jpg)",
             backgroundSize: "cover",
-            backgroundPosition: "center 60%",
-            filter: "blur(14px) saturate(1.1) brightness(0.92)",
+            backgroundPosition: "center 55%",
+            filter: "blur(12px) saturate(1.05) brightness(0.95)",
             transform: "scale(1.08)"
           }}
         />
@@ -46,10 +46,21 @@ export function Hero() {
           </Link>
         </div>
 
-        <div className="col-span-12 lg:col-span-6 lg:col-start-7 mt-14 flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-[11px] uppercase tracking-[0.14em] text-carvao/70">
-          <span>{BRAND.neighborhood}, {BRAND.city}</span>
-          <span aria-hidden className="text-terracota">·</span>
-          <span>Só com hora marcada</span>
+        <div className="col-span-12 lg:col-span-6 lg:col-start-7 mt-14 flex flex-wrap items-center gap-x-5 gap-y-3">
+          <a
+            href={BRAND.googleMapsUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-carvao text-osso px-4 py-2 font-mono text-[11px] uppercase tracking-[0.14em] hover:bg-terracota transition-colors"
+          >
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+              <path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.5L6 22l1.5-7.2L2 10l7.1-1.1z"/>
+            </svg>
+            {BRAND.googleRating.toFixed(1).replace('.', ',')} no Google · {BRAND.googleReviews} avaliações
+          </a>
+          <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-carvao/70">
+            {BRAND.neighborhood}, {BRAND.city} · só com hora marcada
+          </span>
         </div>
       </div>
 

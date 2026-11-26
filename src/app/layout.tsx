@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s · Cabana Pet Café"
   },
   description:
-    "Banho, tosa e café de especialidade ao ar livre em Vila Paraíso, Campinas. Só com hora marcada. Uma clareira urbana para o seu bicho e para você.",
+    "Banho, tosa e café de especialidade ao ar livre em Vila Paraíso, Campinas. Acompanhe o banho pelo vidro enquanto toma um cafezinho. 5,0 no Google.",
   openGraph: {
     type: "website",
     locale: "pt_BR",

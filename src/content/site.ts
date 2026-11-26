@@ -13,33 +13,33 @@ export const SERVICES = [
     support: "Água morna, toalhas quentes, zero pressa.",
     fromCents: 8500,
     slug: "banho-tosa",
-    img: "/images/service-banho.svg"
+    img: "/images/service-banho.jpg"
   },
   {
     n: "02",
-    title: "Café & Cozinha",
-    support: "Grãos de especialidade, confeitaria da casa.",
+    title: "Café",
+    support: "Grãos de especialidade. Lanches frescos.",
     fromCents: 1200,
-    slug: "cafe-cozinha",
-    img: "/images/service-cafe.svg"
+    slug: "cafe",
+    img: "/images/service-cafe.jpg"
   },
   {
     n: "03",
-    title: "Convivência",
-    support: "Mesas na grama, sol filtrado, cachorros contentes.",
+    title: "Gramado",
+    support: "Seguro, cercado, cães soltos.",
     fromCents: 0,
-    slug: "convivencia",
-    img: "/images/service-convivencia.svg"
+    slug: "gramado",
+    img: "/images/service-convivencia.jpg"
   }
 ] as const;
 
 export const TOUR = [
-  { src: "/images/tour-deque.svg", caption: "o deque. onde tudo acontece devagar.", ratio: "4/5" },
-  { src: "/images/tour-banheira.svg", caption: "a banheira. água a 37°C sempre.", ratio: "1/1" },
-  { src: "/images/tour-copa.svg", caption: "a copa. grãos do dia, moídos na hora.", ratio: "3/4" },
-  { src: "/images/tour-jardim.svg", caption: "o jardim. onde o seu bicho encontra outros bichos.", ratio: "16/9" },
-  { src: "/images/tour-varanda.svg", caption: "a varanda. o seu lugar na cabana.", ratio: "4/5" },
-  { src: "/images/tour-detalhe.svg", caption: "o acabamento. cada detalhe pensado.", ratio: "1/1" }
+  { src: "/images/tour-deque.jpg", caption: "o deque. onde tudo acontece devagar.", ratio: "4/5" },
+  { src: "/images/tour-banheira.jpg", caption: "a banheira. acompanhe pelo vidro.", ratio: "1/1" },
+  { src: "/images/tour-copa.jpg", caption: "a copa. grãos do dia, moídos na hora.", ratio: "3/4" },
+  { src: "/images/tour-jardim.jpg", caption: "o gramado. onde o seu bicho faz amigos.", ratio: "16/9" },
+  { src: "/images/tour-varanda.jpg", caption: "a varanda. o seu lugar na cabana.", ratio: "4/5" },
+  { src: "/images/tour-detalhe.jpg", caption: "os detalhes. feitos à mão.", ratio: "1/1" }
 ] as const;
 
 export const MENU_SAMPLE = [
@@ -51,26 +51,27 @@ export const MENU_SAMPLE = [
   { name: "Sagu de uva", desc: "sobremesa da infância, do jeito certo", priceCents: 1600 }
 ] as const;
 
+// Reviews reais do Google · 5,0 estrelas, 242 avaliações
 export const TESTIMONIALS = [
   {
-    text: "O Ben descobriu que gostava de outros cachorros no gramado do Cabana. Eu descobri que gostava de começar sábado com um flat white e um livro.",
-    author: "Marina & Ben",
-    meta: "golden, 4 anos",
-    neighborhood: "Cambuí",
+    text: "Minha doguinha ficou linda e cheirosa enquanto eu tomei um café. Recomendo.",
+    author: "Nathalia Penucho Cristovão",
+    meta: "no Google",
+    neighborhood: "há 2 meses",
     rotate: "-1deg"
   },
   {
-    text: "Marquei pra uma tosa rápida e acabei ficando duas horas a mais. Dava pra sentir que ela estava bem. Dava pra sentir que eu também.",
-    author: "Rodrigo & Flor",
-    meta: "lhasa, 7 anos",
-    neighborhood: "Taquaral",
+    text: "Experiência única. O lugar é lindo, aconchegante e estruturado. Enquanto seu pet toma banho você toma um cafezinho super gostoso. Dá pra acompanhar o banho porque a parte é de vidro.",
+    author: "Izabelle Lemos Sene Ribeiro",
+    meta: "no Google",
+    neighborhood: "há 1 ano",
     rotate: "1.5deg"
   },
   {
-    text: "Não é pet shop. É o lugar que eu quero que o meu cachorro associe a felicidade. E ele associa.",
-    author: "Camila & Otávio",
-    meta: "vira-lata, 2 anos",
-    neighborhood: "Guanabara",
+    text: "Experiência incrível. Recepção com as filhas de pelo, excepcional. Lugar de gramado, seguro, aconchegante. Nunca vi minhas pets tão felizes para um banho. Sem medo, sem tremor.",
+    author: "Neusa Luciene Dunder",
+    meta: "no Google",
+    neighborhood: "há 1 ano",
     rotate: "-0.5deg"
   }
 ] as const;

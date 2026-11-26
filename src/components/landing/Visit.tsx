@@ -45,12 +45,12 @@ export function Visit() {
             <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.14em] text-carvao/60">
               <span>22°54′S / 47°03′W</span>
               <a
-                href={`https://maps.google.com/?q=${BRAND.coords.lat},${BRAND.coords.lng}`}
+                href={BRAND.googleMapsUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="accent-wave"
               >
-                Abrir no Maps
+                Abrir no Google Maps
               </a>
             </div>
           </div>
@@ -62,7 +62,8 @@ export function Visit() {
 
             <div className="font-display text-[26px] leading-tight text-osso">
               {BRAND.address}<br />
-              {BRAND.neighborhood} · {BRAND.city}/{BRAND.state}
+              {BRAND.neighborhood} · {BRAND.city}/{BRAND.state}<br />
+              <span className="text-osso/55 text-[18px]">CEP {BRAND.zip}</span>
             </div>
 
             <div className="my-8 h-px bg-osso/30" />
@@ -70,13 +71,21 @@ export function Visit() {
             <div className="space-y-5 font-sans text-[15px] text-osso/85">
               <div>
                 <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-mate">Horário</div>
-                <div className="mt-1">Terça a Sábado · 09:00 às 18:00</div>
-                <div className="text-osso/55">Fechamos domingo e segunda.</div>
+                <div className="mt-1">Terça a Sábado · 09:15 às 18:00</div>
+                <div className="text-osso/55">{BRAND.closed}</div>
               </div>
               <div>
                 <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-mate">Contato</div>
                 <div className="mt-1">{BRAND.phone}</div>
-                <div className="text-osso/55">{BRAND.email}</div>
+                <div className="text-osso/55">{BRAND.instagram} · {BRAND.email}</div>
+              </div>
+              <div>
+                <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-mate">No Google</div>
+                <div className="mt-1 flex items-center gap-2">
+                  <span className="text-mate">★★★★★</span>
+                  <span>{BRAND.googleRating.toFixed(1).replace('.', ',')}</span>
+                  <span className="text-osso/55">· {BRAND.googleReviews} avaliações</span>
+                </div>
               </div>
             </div>
 

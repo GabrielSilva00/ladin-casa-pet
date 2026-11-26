@@ -37,7 +37,7 @@ export function Footer() {
               <li>{BRAND.neighborhood} · {BRAND.city}/{BRAND.state}</li>
               <li>Terça a Sábado · 09h às 18h</li>
               <li>
-                <a href={`https://maps.google.com/?q=${BRAND.coords.lat},${BRAND.coords.lng}`} className="accent-wave">
+                <a href={BRAND.googleMapsUrl} target="_blank" rel="noreferrer" className="accent-wave">
                   Como chegar
                 </a>
               </li>
