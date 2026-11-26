@@ -40,13 +40,22 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Foto do deque — placeholder quando assets não existem */}
+      {/* Foto do deque (SVG placeholder — trocar por foto real em public/images/hero.svg) */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-[60%] -z-0 opacity-70"
+        className="pointer-events-none absolute inset-0 -z-0 opacity-85 warm-filter"
+        style={{
+          backgroundImage: "url(/images/hero.svg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center 65%"
+        }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-0"
         style={{
           background:
-            "radial-gradient(60% 55% at 70% 65%, rgba(45,95,63,0.45), transparent 65%), radial-gradient(45% 50% at 20% 80%, rgba(184,80,46,0.35), transparent 60%)"
+            "linear-gradient(180deg, rgba(244,237,224,0.95) 0%, rgba(244,237,224,0.65) 40%, rgba(244,237,224,0.15) 100%)"
         }}
       />
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">

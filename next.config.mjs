@@ -9,8 +9,10 @@ const nextConfig = {
     ]
   },
   experimental: {
-    optimizePackageImports: ["iconoir-react", "framer-motion", "date-fns"]
-  }
+    optimizePackageImports: ["framer-motion", "date-fns"]
+  },
+  poweredByHeader: false,
+  compress: true
 };
 
 export default nextConfig;

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1125" width="900" height="1125" role="img" aria-label="a varanda">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#D4917A" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#2D5F3F" stop-opacity="0.65"/>
+    </linearGradient>
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"/>
+      <feColorMatrix values="0 0 0 0 0.1  0 0 0 0 0.08  0 0 0 0 0.06  0 0 0 0.18 0"/>
+    </filter>
+  </defs>
+  <rect width="900" height="1125" fill="url(#g)"/>
+  <rect width="900" height="1125" fill="transparent" filter="url(#noise)" opacity="0.4"/>
+  <g transform="translate(450,562.5)">
+    <text text-anchor="middle" y="-10" font-family="Georgia, serif" font-size="64" font-style="italic" fill="#1A1512" opacity="0.95">a varanda</text>
+    <line x1="-28" x2="28" y1="8" y2="8" stroke="#1A1512" stroke-width="1" opacity="0.7"/>
+    <text text-anchor="middle" y="30" font-family="ui-monospace, monospace" font-size="35" fill="#1A1512" opacity="0.6" letter-spacing="2">O SEU LUGAR</text>
+  </g>
+  <text x="884" y="1111" text-anchor="end" font-family="ui-monospace, monospace" font-size="10" fill="#1A1512" opacity="0.45" letter-spacing="1.5">CABANA · PLACEHOLDER</text>
+</svg>

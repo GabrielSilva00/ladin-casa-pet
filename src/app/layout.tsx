@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     siteName: "Cabana Pet Café",
-    images: [{ url: "/og.png", width: 1200, height: 630 }]
+    images: [{ url: "/images/og.svg", width: 1200, height: 630 }]
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { card: "summary_large_image", images: ["/images/og.svg"] },
   alternates: { canonical: "/" },
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
-    apple: "/apple-touch-icon.png"
+    apple: "/apple-touch-icon.svg"
   }
 };
 

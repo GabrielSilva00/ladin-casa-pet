@@ -13,7 +13,7 @@ export const SERVICES = [
     support: "Água morna, toalhas quentes, zero pressa.",
     fromCents: 8500,
     slug: "banho-tosa",
-    img: "/images/service-banho.jpg"
+    img: "/images/service-banho.svg"
   },
   {
     n: "02",
@@ -21,7 +21,7 @@ export const SERVICES = [
     support: "Grãos de especialidade, confeitaria da casa.",
     fromCents: 1200,
     slug: "cafe-cozinha",
-    img: "/images/service-cafe.jpg"
+    img: "/images/service-cafe.svg"
   },
   {
     n: "03",
@@ -29,17 +29,17 @@ export const SERVICES = [
     support: "Mesas na grama, sol filtrado, cachorros contentes.",
     fromCents: 0,
     slug: "convivencia",
-    img: "/images/service-convivencia.jpg"
+    img: "/images/service-convivencia.svg"
   }
 ] as const;
 
 export const TOUR = [
-  { src: "/images/tour-deque.jpg", caption: "o deque. onde tudo acontece devagar.", ratio: "4/5" },
-  { src: "/images/tour-banheira.jpg", caption: "a banheira. água a 37°C sempre.", ratio: "1/1" },
-  { src: "/images/tour-copa.jpg", caption: "a copa. grãos do dia, moídos na hora.", ratio: "3/4" },
-  { src: "/images/tour-jardim.jpg", caption: "o jardim. onde o seu bicho encontra outros bichos.", ratio: "16/9" },
-  { src: "/images/tour-varanda.jpg", caption: "a varanda. o seu lugar na cabana.", ratio: "4/5" },
-  { src: "/images/tour-detalhe.jpg", caption: "o acabamento. cada detalhe pensado.", ratio: "1/1" }
+  { src: "/images/tour-deque.svg", caption: "o deque. onde tudo acontece devagar.", ratio: "4/5" },
+  { src: "/images/tour-banheira.svg", caption: "a banheira. água a 37°C sempre.", ratio: "1/1" },
+  { src: "/images/tour-copa.svg", caption: "a copa. grãos do dia, moídos na hora.", ratio: "3/4" },
+  { src: "/images/tour-jardim.svg", caption: "o jardim. onde o seu bicho encontra outros bichos.", ratio: "16/9" },
+  { src: "/images/tour-varanda.svg", caption: "a varanda. o seu lugar na cabana.", ratio: "4/5" },
+  { src: "/images/tour-detalhe.svg", caption: "o acabamento. cada detalhe pensado.", ratio: "1/1" }
 ] as const;
 
 export const MENU_SAMPLE = [

@@ -78,7 +78,7 @@ export const SERVICE_OPTIONS: ServiceOption[] = [
     basePriceCents: 8500,
     parallel: true,
     blurb: "Água morna, produtos hipoalergênicos, toalha quente.",
-    img: "/images/service-banho.jpg",
+    img: "/images/service-banho.svg",
     priceByCoatSize: {
       "mini-curta": 7500, "mini-media": 8500, "mini-longa": 9500, "mini-dupla": 9500,
       "pequeno-curta": 8500, "pequeno-media": 9500, "pequeno-longa": 10500, "pequeno-dupla": 10500,
@@ -94,7 +94,7 @@ export const SERVICE_OPTIONS: ServiceOption[] = [
     basePriceCents: 11000,
     parallel: true,
     blurb: "Banho completo + acabamentos de higiene (patas, íntima, rosto).",
-    img: "/images/service-tosa-hig.jpg",
+    img: "/images/service-tosa-hig.svg",
     priceByCoatSize: {
       "mini-curta": 10000, "mini-media": 11000, "mini-longa": 12000, "mini-dupla": 12500,
       "pequeno-curta": 11000, "pequeno-media": 12000, "pequeno-longa": 13500, "pequeno-dupla": 13500,
@@ -110,7 +110,7 @@ export const SERVICE_OPTIONS: ServiceOption[] = [
     basePriceCents: 15500,
     parallel: false,
     blurb: "Tosa com máquina/tesoura conforme o pelo e porte do bicho.",
-    img: "/images/service-tosa-full.jpg",
+    img: "/images/service-tosa-full.svg",
     priceByCoatSize: {
       "mini-curta": 14000, "mini-media": 15500, "mini-longa": 17000, "mini-dupla": 17500,
       "pequeno-curta": 15500, "pequeno-media": 17000, "pequeno-longa": 19000, "pequeno-dupla": 19500,
@@ -126,7 +126,7 @@ export const SERVICE_OPTIONS: ServiceOption[] = [
     basePriceCents: 4500,
     parallel: true,
     blurb: "Máscara de hidratação com oleo de coco e vitamina E.",
-    img: "/images/service-hidratacao.jpg",
+    img: "/images/service-hidratacao.svg",
     priceByCoatSize: {
       "mini-curta": 4000, "mini-media": 4500, "mini-longa": 5000, "mini-dupla": 5000,
       "pequeno-curta": 4500, "pequeno-media": 5000, "pequeno-longa": 5500, "pequeno-dupla": 5500,
@@ -142,7 +142,7 @@ export const SERVICE_OPTIONS: ServiceOption[] = [
     basePriceCents: 0,
     parallel: true,
     blurb: "Grátis com qualquer banho.",
-    img: "/images/service-unhas.jpg",
+    img: "/images/service-unhas.svg",
     priceByCoatSize: {}
   }
 ];
