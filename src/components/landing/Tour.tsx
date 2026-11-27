@@ -18,7 +18,7 @@ export function Tour() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
             <span className="section-eyebrow on-dark">O lugar</span>
-            <h2 className="mt-4 font-display text-h2 text-creme whitespace-nowrap">
+            <h2 className="mt-4 font-display text-h2 text-creme md:whitespace-nowrap">
               Entre, <em className="italic">fique</em>, respire.
             </h2>
           </div>
@@ -45,13 +45,13 @@ export function Tour() {
 
       <div
         ref={scroller}
-        className="mt-12 flex gap-5 overflow-x-auto scroll-snap-x pb-6 pl-[max(1.25rem,calc((100vw-1280px)/2+1.25rem))] pr-5"
+        className="mt-12 flex gap-4 overflow-x-auto scroll-snap-x pb-6 pl-5 md:pl-[max(1.25rem,calc((100vw-1280px)/2+1.25rem))] pr-5"
         style={{ scrollbarWidth: "none" }}
       >
         {TOUR.map((item, i) => (
           <figure
             key={item.src}
-            className="shrink-0 w-[min(78vw,420px)] aspect-[3/4]"
+            className="shrink-0 w-[min(70vw,360px)] aspect-[3/4]"
           >
             <div className="relative h-full w-full overflow-hidden rounded-soft bg-musgo/20 warm-filter">
               <div
