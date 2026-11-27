@@ -51,27 +51,51 @@ export function Menu() {
           ))}
         </ul>
 
-        {/* Lista completa estilo cardápio impresso */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-14 border-t border-tinta/15 pt-10">
-          <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-tinta/55 mb-4 md:col-span-2">
-            Também na casa
-          </div>
-          {MENU_SAMPLE.map((item, idx) => (
-            <div
-              key={item.name}
-              className={`flex items-baseline gap-4 py-4 ${idx > 1 ? "border-t border-tinta/10" : ""} md:[&:nth-child(2)]:border-t-0 md:[&:nth-child(3)]:border-t-0`}
-            >
-              <div className="min-w-0 flex-1">
-                <h4 className="font-display italic text-[19px] leading-tight text-tinta">
-                  {item.name}
-                </h4>
-                <p className="mt-1 font-sans text-[13px] text-tinta/60">{item.desc}</p>
-              </div>
-              <div className="font-mono text-[13px] text-tinta font-numeric whitespace-nowrap">
-                {brl(item.priceCents)}
-              </div>
+        {/* Também na casa — card com mais destaque */}
+        <div className="mt-6 rounded-soft bg-baunilha2 border border-tinta/15 overflow-hidden">
+          <header className="flex items-end justify-between gap-4 px-6 md:px-8 pt-6 pb-4 border-b border-tinta/15">
+            <div>
+              <span className="section-eyebrow" style={{ fontSize: "12px", opacity: 0.55 }}>
+                O cardápio completo
+              </span>
+              <h3 className="mt-2 font-display font-medium text-tinta text-[clamp(1.5rem,2.5vw,2rem)] leading-tight">
+                Também na casa
+              </h3>
             </div>
-          ))}
+            <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-tinta/55 hidden sm:inline">
+              {MENU_SAMPLE.length} itens
+            </span>
+          </header>
+
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-10 px-6 md:px-8 py-4">
+            {MENU_SAMPLE.map((item) => (
+              <li
+                key={item.name}
+                className="group flex items-start gap-4 py-4 border-b border-tinta/10 last:border-b-0 md:[&:nth-last-child(2)]:border-b-0"
+              >
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-baseline gap-3">
+                    <h4 className="font-display font-medium text-[18px] leading-tight text-tinta truncate">
+                      {item.name}
+                    </h4>
+                    <span
+                      aria-hidden
+                      className="flex-1 border-b border-dotted border-tinta/30 translate-y-[-3px]"
+                    />
+                    <span className="font-mono text-[13px] text-tinta font-numeric whitespace-nowrap">
+                      {brl(item.priceCents)}
+                    </span>
+                  </div>
+                  <p className="mt-1 font-sans text-[13px] text-tinta/60">{item.desc}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          <footer className="px-6 md:px-8 py-4 border-t border-tinta/15 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.14em] text-tinta/55">
+            <span>Preços sazonais — Nov/26</span>
+            <span>Pede sem pressa.</span>
+          </footer>
         </div>
       </div>
     </section>

@@ -28,10 +28,10 @@ export function Hero() {
         {/* Coluna esquerda: texto */}
         <div className="col-span-12 md:col-span-7 lg:col-span-6 text-left">
           <h1 className="font-display font-medium text-baunilha text-[clamp(2.25rem,5.6vw,4.5rem)] leading-[0.98] tracking-[-0.035em] max-w-[14ch] text-balance">
-            Banho pro pet, <em className="italic text-baunilha">café pra você.</em>
+            Banho pro pet, <em className="italic" style={{ color: "#D4855E" }}>café pra você.</em>
           </h1>
 
-          <p className="mt-6 font-sans text-[16px] md:text-[17px] leading-[1.55] text-baunilha/80 max-w-[42ch]">
+          <p className="mt-6 font-sans text-[16px] md:text-[17px] leading-[1.55] max-w-[42ch]" style={{ color: "#E8DCC4" }}>
             Acompanhe o banho pelo vidro enquanto toma um cafezinho. Vila Paraíso, Campinas.
           </p>
 
