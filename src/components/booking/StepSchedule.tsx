@@ -79,9 +79,9 @@ export function StepSchedule() {
                   : "border-carvao/10 text-carvao/30 cursor-not-allowed line-through"
               )}
             >
-              <div className="font-mono text-[10px] uppercase tracking-[0.14em]">{formatDayLabel(d)}</div>
+              <div className="font-sans text-[10px] uppercase font-semibold tracking-[0.14em]">{formatDayLabel(d)}</div>
               <div className="mt-1 font-display text-[28px] leading-none">{formatDayNumber(d)}</div>
-              <div className="mt-1 font-mono text-[10px] uppercase">{formatMonth(d)}</div>
+              <div className="mt-1 font-sans text-[10px] uppercase font-semibold">{formatMonth(d)}</div>
             </button>
           );
         })}
@@ -92,7 +92,7 @@ export function StepSchedule() {
           <h2 className="font-display text-[26px] text-carvao capitalize">
             {formatFull(date)}
           </h2>
-          <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-carvao/55">
+          <span className="font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-carvao/55">
             {loading ? "carregando..." : `${slots.filter((s) => s.available).length} slots livres`}
           </span>
         </div>

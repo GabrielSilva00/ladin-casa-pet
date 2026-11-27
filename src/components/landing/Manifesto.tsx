@@ -29,7 +29,7 @@ export function Manifesto() {
 function Stat({ label, value, sub }: { label: string; value: string; sub: string }) {
   return (
     <div>
-      <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-tinta/55">{label}</div>
+      <div className="font-sans text-[10px] uppercase font-semibold tracking-[0.14em] text-tinta/55">{label}</div>
       <div className="mt-2 font-display text-[clamp(28px,4vw,40px)] leading-none text-tinta">{value}</div>
       <div className="mt-1 font-mono text-[11px] text-tinta/55">{sub}</div>
     </div>

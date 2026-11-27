@@ -28,7 +28,7 @@ export const InputField = React.forwardRef<HTMLInputElement, InputFieldProps>(
         <label
           htmlFor={inputId}
           className={cn(
-            "block pb-2 font-mono text-[11px] uppercase tracking-[0.14em] font-medium transition-colors",
+            "block pb-2 font-sans text-[11px] uppercase font-semibold tracking-[0.14em] font-medium transition-colors",
             error ? "text-tijolo2" : focused ? "text-tijolo" : "text-tinta/60"
           )}
         >
@@ -86,7 +86,7 @@ export const TextareaField = React.forwardRef<HTMLTextAreaElement, TextareaField
     return (
       <div className={cn("relative", className)}>
         <label htmlFor={textareaId} className={cn(
-          "block pb-2 font-mono text-[11px] uppercase tracking-[0.14em] font-medium transition-colors",
+          "block pb-2 font-sans text-[11px] uppercase font-semibold tracking-[0.14em] font-medium transition-colors",
           error ? "text-tijolo2" : focused ? "text-tijolo" : "text-tinta/60"
         )}>
           {label}
@@ -128,7 +128,7 @@ export function PillGroup<T extends string>({
 }) {
   return (
     <div>
-      <div className="pb-2 font-mono text-[11px] uppercase tracking-[0.14em] text-tinta/60 font-medium">{label}</div>
+      <div className="pb-2 font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-tinta/60 font-medium">{label}</div>
       <div className="flex flex-wrap gap-2">
         {options.map((opt) => {
           const active = value === opt.value;

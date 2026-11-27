@@ -57,7 +57,7 @@ function LoginForm() {
         {sending ? "Enviando…" : "Enviar link"}
       </Button>
 
-      <p className="mt-10 font-mono text-[11px] uppercase tracking-wider2 text-carvao/50">
+      <p className="mt-10 font-sans text-[11px] uppercase font-semibold tracking-wider2 text-carvao/50">
         Só e-mails autorizados têm acesso ao painel.
       </p>
     </form>

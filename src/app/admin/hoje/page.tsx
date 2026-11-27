@@ -56,20 +56,20 @@ export default async function HojePage() {
                   {b.client?.name} · <a href={`https://wa.me/${b.client?.phone}`} className="underline-wavy">{b.client?.phone}</a>
                 </div>
               </div>
-              <div className="col-span-3 font-mono text-[11px] uppercase tracking-wider2 text-osso/70">
+              <div className="col-span-3 font-sans text-[11px] uppercase font-semibold tracking-wider2 text-osso/70">
                 {b.service_ids.join(" + ")} · {b.duration_min}min
               </div>
               <div className="col-span-1 font-mono text-[13px] text-osso/80 text-right font-numeric">
                 {brl(b.total_price_cents)}
               </div>
               <div className="col-span-1 text-right">
-                <span className={`inline-flex rounded-full border px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider2 ${STATUS_COLORS[b.status] ?? ""}`}>
+                <span className={`inline-flex rounded-full border px-2 py-0.5 font-sans text-[10px] uppercase font-semibold tracking-wider2 ${STATUS_COLORS[b.status] ?? ""}`}>
                   {STATUS_LABELS[b.status] ?? b.status}
                 </span>
               </div>
               {b.notes ? (
                 <div className="col-span-12 pt-3 mt-3 border-t border-osso/10 font-sans text-[13px] text-osso/65">
-                  <span className="font-mono text-[10px] uppercase tracking-wider2 text-mate mr-2">nota:</span>
+                  <span className="font-sans text-[10px] uppercase font-semibold tracking-wider2 text-mate mr-2">nota:</span>
                   {b.notes}
                 </div>
               ) : null}

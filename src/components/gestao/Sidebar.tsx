@@ -95,7 +95,7 @@ export function Sidebar({ active = "painel", counts }: { active?: string; counts
       </div>
 
       <nav className="flex-1 py-4 px-3">
-        <div className="px-2 pb-2 font-mono text-[10px] uppercase tracking-[0.14em] text-creme/40">
+        <div className="px-2 pb-2 font-sans text-[10px] uppercase font-semibold tracking-[0.14em] text-creme/40">
           Operação
         </div>
         <ul className="space-y-0.5">

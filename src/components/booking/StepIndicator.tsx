@@ -67,7 +67,7 @@ export function StepIndicator() {
             );
           })}
         </ol>
-        <span className="hidden md:inline font-mono text-[11px] uppercase tracking-[0.14em] text-tinta/50 font-numeric">
+        <span className="hidden md:inline font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-tinta/50 font-numeric">
           {Math.round(pct)}%
         </span>
       </div>

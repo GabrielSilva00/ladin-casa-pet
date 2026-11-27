@@ -8,7 +8,7 @@ export function Footer() {
       <div className="container py-16 md:py-20">
         <div className="grid grid-cols-12 gap-8">
           <section className="col-span-12 md:col-span-4">
-            <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-mel mb-4">
+            <div className="font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-mel mb-4">
               Novidades
             </div>
             <p className="font-sans text-[15px] text-creme/75 mb-5 max-w-[32ch]">
@@ -26,14 +26,14 @@ export function Footer() {
                 placeholder="seu@email.com"
                 className="w-full bg-transparent text-creme placeholder-creme/40 outline-none font-sans text-[14px]"
               />
-              <button type="submit" className="rounded-full bg-tijolo px-4 py-2 font-mono text-[11px] uppercase tracking-[0.14em] text-creme hover:bg-tijolo2 transition-colors">
+              <button type="submit" className="rounded-full bg-tijolo px-4 py-2 font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-creme hover:bg-tijolo2 transition-colors">
                 assinar
               </button>
             </form>
           </section>
 
           <section className="col-span-6 md:col-span-3 md:col-start-6">
-            <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-mel mb-4">Visite</div>
+            <div className="font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-mel mb-4">Visite</div>
             <ul className="space-y-2 font-sans text-[14px] text-creme/80">
               <li>{BRAND.address}</li>
               <li>{BRAND.neighborhood}, {BRAND.city}/{BRAND.state}</li>
@@ -47,7 +47,7 @@ export function Footer() {
           </section>
 
           <section className="col-span-6 md:col-span-3">
-            <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-mel mb-4">Fale com a gente</div>
+            <div className="font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-mel mb-4">Fale com a gente</div>
             <ul className="space-y-2 font-sans text-[14px] text-creme/80">
               <li>
                 <a href={`https://wa.me/${BRAND.phoneDigits}`} target="_blank" rel="noreferrer" className="accent-wave">
@@ -82,7 +82,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-6 pt-6 border-t border-creme/15 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 font-mono text-[11px] uppercase tracking-[0.14em] text-creme/50">
+        <div className="mt-6 pt-6 border-t border-creme/15 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-creme/50">
           <span>© {year} Cabana Pet Café · Campinas</span>
           <div className="flex items-center gap-4">
             <Link href="/gestao" className="hover:text-mel">Gestão</Link>

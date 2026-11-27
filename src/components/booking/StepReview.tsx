@@ -65,7 +65,7 @@ export function StepReview() {
   return (
     <div className="space-y-10">
       <header>
-        <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-tijolo">
+        <div className="font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-tijolo">
           Passo 05 · Confirmação
         </div>
         <h1 className="mt-3 font-display text-h2 text-tinta text-balance">
@@ -74,7 +74,7 @@ export function StepReview() {
       </header>
 
       <article className="rounded-soft bg-creme2/60 border border-tinta/15 p-6 md:p-10">
-        <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-tijolo">
+        <div className="font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-tijolo">
           Cabana Pet Café · Vila Paraíso
         </div>
 
@@ -104,22 +104,22 @@ export function StepReview() {
 
         <div className="mt-5 grid grid-cols-1 md:grid-cols-2 gap-5 font-sans text-[14px] text-tinta">
           <div>
-            <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-tinta/55">Quando</div>
+            <div className="font-sans text-[10px] uppercase font-semibold tracking-[0.14em] text-tinta/55">Quando</div>
             <div className="mt-1 capitalize">{niceDate}</div>
             <div className="mt-1 font-numeric text-tinta/70">{state.time} · ~{duration} min</div>
           </div>
           <div>
-            <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-tinta/55">Onde</div>
+            <div className="font-sans text-[10px] uppercase font-semibold tracking-[0.14em] text-tinta/55">Onde</div>
             <div className="mt-1">Rua José Gabeta, 522</div>
             <div className="mt-1 text-tinta/60">Vila Paraíso · Campinas</div>
           </div>
           <div>
-            <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-tinta/55">Tutor</div>
+            <div className="font-sans text-[10px] uppercase font-semibold tracking-[0.14em] text-tinta/55">Tutor</div>
             <div className="mt-1">{state.tutorName}</div>
             <div className="mt-1 text-tinta/60 font-numeric">{state.phone}</div>
           </div>
           <div className="md:text-right">
-            <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-tinta/55">Total estimado</div>
+            <div className="font-sans text-[10px] uppercase font-semibold tracking-[0.14em] text-tinta/55">Total estimado</div>
             <div className="mt-1 font-display text-[32px] leading-none text-tijolo font-numeric">
               {brl(total)}
             </div>
@@ -131,7 +131,7 @@ export function StepReview() {
 
         {state.notes ? (
           <div className="mt-6 pt-5 border-t border-tinta/15 font-sans text-[14px] text-tinta/75">
-            <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-tinta/55 mr-2">Nota:</span>
+            <span className="font-sans text-[10px] uppercase font-semibold tracking-[0.14em] text-tinta/55 mr-2">Nota:</span>
             {state.notes}
           </div>
         ) : null}

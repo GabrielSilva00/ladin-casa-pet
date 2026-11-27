@@ -74,13 +74,13 @@ export function NewBookingModal({
   return (
     <div className="fixed inset-0 z-50">
       <div className="absolute inset-0 bg-carvao/50 backdrop-blur-sm" onClick={onClose} />
-      <div className="absolute inset-0 overflow-y-auto">
+      <div className="absolute inset-0 overflow-y-auto overscroll-contain" data-lenis-prevent>
         <div className="min-h-full flex items-start md:items-center justify-center p-4 py-10">
           <section className="relative w-full max-w-2xl bg-osso corner-chamfer p-8 md:p-10 shadow-[0_30px_80px_-20px_rgba(15,14,12,0.5)] animate-rise">
             <button
               type="button"
               onClick={onClose}
-              className="absolute top-5 right-5 font-mono text-[11px] uppercase tracking-[0.14em] text-carvao/55 hover:text-carvao"
+              className="absolute top-5 right-5 font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-carvao/55 hover:text-carvao"
             >
               fechar ✕
             </button>

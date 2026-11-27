@@ -46,7 +46,7 @@ export function Services() {
                 </div>
 
                 <div className="flex items-center justify-between px-5 py-4 bg-creme">
-                  <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-tinta/60">
+                  <span className="font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-tinta/60">
                     {s.fromCents > 0 ? `a partir de ${brl(s.fromCents)}` : "cortesia"}
                   </span>
                   <span className="inline-flex items-center gap-1.5 font-sans text-[13px] text-tijolo">

@@ -11,7 +11,7 @@ export function AdminHeader({ eyebrow, title, action }: { eyebrow: string; title
   return (
     <header className="flex items-end justify-between gap-6 border-b border-osso/10 pb-6">
       <div>
-        <div className="font-mono text-[10px] uppercase tracking-wider2 text-mate">({eyebrow})</div>
+        <div className="font-sans text-[10px] uppercase font-semibold tracking-wider2 text-mate">({eyebrow})</div>
         <h1 className="mt-2 font-display text-[clamp(32px,4vw,52px)] text-osso">{title}</h1>
       </div>
       {action}

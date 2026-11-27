@@ -27,7 +27,7 @@ export default async function CardapioAdminPage() {
               <div className="col-span-3 font-mono text-[11px] text-osso/60">{s.duration_min} min</div>
               <div className="col-span-3 font-mono text-[12px] text-osso/80 font-numeric">a partir de {brl(s.base_price_cents)}</div>
               <div className="col-span-1 text-right">
-                <span className={`inline-flex rounded-full border px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider2 ${s.featured ? "border-mate text-mate" : "border-osso/30 text-osso/50"}`}>
+                <span className={`inline-flex rounded-full border px-2 py-0.5 font-sans text-[10px] uppercase font-semibold tracking-wider2 ${s.featured ? "border-mate text-mate" : "border-osso/30 text-osso/50"}`}>
                   {s.featured ? "no site" : "oculto"}
                 </span>
               </div>
@@ -45,7 +45,7 @@ export default async function CardapioAdminPage() {
               <div className="col-span-4 font-sans text-[13px] text-osso/65 truncate">{i.description}</div>
               <div className="col-span-2 font-mono text-[12px] text-osso/80 font-numeric">{brl(i.price_cents)}</div>
               <div className="col-span-1 text-right">
-                <span className={`inline-flex rounded-full border px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider2 ${i.featured ? "border-mate text-mate" : "border-osso/30 text-osso/50"}`}>
+                <span className={`inline-flex rounded-full border px-2 py-0.5 font-sans text-[10px] uppercase font-semibold tracking-wider2 ${i.featured ? "border-mate text-mate" : "border-osso/30 text-osso/50"}`}>
                   {i.featured ? "destaque" : "regular"}
                 </span>
               </div>
@@ -54,7 +54,7 @@ export default async function CardapioAdminPage() {
         </ul>
       </section>
 
-      <p className="mt-8 font-mono text-[11px] uppercase tracking-wider2 text-osso/40">
+      <p className="mt-8 font-sans text-[11px] uppercase font-semibold tracking-wider2 text-osso/40">
         CRUD completo (criar, editar, remover). Próxima entrega.
       </p>
     </div>

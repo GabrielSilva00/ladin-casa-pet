@@ -31,14 +31,14 @@ export function Visit() {
               />
               <div className="absolute inset-x-5 bottom-5 flex items-end justify-between gap-4 text-creme">
                 <div>
-                  <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-creme/70">
+                  <div className="font-sans text-[10px] uppercase font-semibold tracking-[0.14em] text-creme/70">
                     22°54′S / 47°03′W
                   </div>
                   <div className="mt-2 font-display text-[22px] leading-tight">
                     {BRAND.address}, {BRAND.neighborhood}
                   </div>
                 </div>
-                <span className="inline-flex items-center gap-2 rounded-full bg-tijolo px-4 py-2 font-mono text-[11px] uppercase tracking-[0.14em] text-creme shrink-0">
+                <span className="inline-flex items-center gap-2 rounded-full bg-tijolo px-4 py-2 font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-creme shrink-0">
                   Abrir no Maps
                   <svg width="12" height="10" viewBox="0 0 12 10" className="transition-transform group-hover:translate-x-1" aria-hidden>
                     <path d="M1 5h9M7 1l4 4-4 4" stroke="currentColor" strokeWidth="1.4" fill="none" strokeLinecap="round"/>
@@ -49,7 +49,7 @@ export function Visit() {
           </div>
 
           <aside className="col-span-12 md:col-span-5 rounded-soft bg-tinta text-creme p-7 md:p-9 flex flex-col">
-            <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-mel">
+            <div className="font-sans text-[10px] uppercase font-semibold tracking-[0.14em] text-mel">
               Cabana Pet Café · 001
             </div>
 
@@ -63,17 +63,17 @@ export function Visit() {
 
             <dl className="space-y-5 font-sans text-[14px]">
               <div>
-                <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-mel">Horário</dt>
+                <dt className="font-sans text-[10px] uppercase font-semibold tracking-[0.14em] text-mel">Horário</dt>
                 <dd className="mt-1.5 text-creme/90">Terça a sábado · 9h às 18h</dd>
                 <dd className="text-creme/50">{BRAND.closed}</dd>
               </div>
               <div>
-                <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-mel">Contato</dt>
+                <dt className="font-sans text-[10px] uppercase font-semibold tracking-[0.14em] text-mel">Contato</dt>
                 <dd className="mt-1.5 text-creme/90 font-numeric">{BRAND.phone}</dd>
                 <dd className="text-creme/50">{BRAND.instagram}</dd>
               </div>
               <div>
-                <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-mel">No Google</dt>
+                <dt className="font-sans text-[10px] uppercase font-semibold tracking-[0.14em] text-mel">No Google</dt>
                 <dd className="mt-1.5 flex items-center gap-2">
                   <span className="text-mel">★★★★★</span>
                   <span className="text-creme/90 font-numeric">{BRAND.googleRating.toFixed(1).replace('.', ',')}</span>

@@ -35,7 +35,7 @@ export default async function BloqueiosPage() {
                   {format(parseISO(b.ends_at), "dd/MM HH:mm", { locale: ptBR })}
                 </div>
               </div>
-              <button className="font-mono text-[11px] uppercase tracking-wider2 text-osso/60 hover:text-vinho">
+              <button className="font-sans text-[11px] uppercase font-semibold tracking-wider2 text-osso/60 hover:text-vinho">
                 remover
               </button>
             </li>
@@ -43,7 +43,7 @@ export default async function BloqueiosPage() {
         </ul>
       )}
 
-      <p className="mt-10 font-mono text-[11px] uppercase tracking-wider2 text-osso/40">
+      <p className="mt-10 font-sans text-[11px] uppercase font-semibold tracking-wider2 text-osso/40">
         Criação e edição com modal. Próxima entrega.
       </p>
     </div>

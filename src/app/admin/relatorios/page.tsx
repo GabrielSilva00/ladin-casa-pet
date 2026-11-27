@@ -71,7 +71,7 @@ export default async function RelatoriosPage() {
 function Stat({ label, value }: { label: string; value: string }) {
   return (
     <div className="border border-osso/10 corner-chamfer-sm p-6 bg-osso/5">
-      <div className="font-mono text-[10px] uppercase tracking-wider2 text-mate">{label}</div>
+      <div className="font-sans text-[10px] uppercase font-semibold tracking-wider2 text-mate">{label}</div>
       <div className="mt-2 font-display text-[36px] text-osso font-numeric">{value}</div>
     </div>
   );

@@ -25,7 +25,7 @@ export default async function ClientesPage() {
                     {c.phone} {c.email ? `· ${c.email}` : ""}
                   </div>
                 </div>
-                <span className="font-mono text-[10px] uppercase tracking-wider2 text-mate">
+                <span className="font-sans text-[10px] uppercase font-semibold tracking-wider2 text-mate">
                   {c.source ?? "—"}
                 </span>
               </div>
@@ -37,7 +37,7 @@ export default async function ClientesPage() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-4 font-mono text-[10px] uppercase tracking-wider2 text-osso/50">
+              <div className="mt-4 font-sans text-[10px] uppercase font-semibold tracking-wider2 text-osso/50">
                 {(c.bookings ?? []).length} visitas · cliente desde {format(parseISO(c.created_at), "MM/yyyy")}
               </div>
             </li>

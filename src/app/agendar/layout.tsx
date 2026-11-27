@@ -31,7 +31,7 @@ export default function AgendarLayout({ children }: { children: React.ReactNode 
           </div>
         </main>
 
-        <footer className="container py-8 border-t border-tinta/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 font-mono text-[11px] uppercase tracking-[0.14em] text-tinta/50">
+        <footer className="container py-8 border-t border-tinta/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-tinta/50">
           <span>Dúvidas? Chame no WhatsApp.</span>
           <a href={`https://wa.me/${BRAND.phoneDigits}`} className="hover:text-tijolo">{BRAND.phone}</a>
         </footer>

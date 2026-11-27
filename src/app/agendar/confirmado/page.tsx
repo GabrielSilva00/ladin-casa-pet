@@ -16,7 +16,7 @@ function Content() {
           <path d="M1 11l8 8L27 2" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </div>
-      <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-tijolo">
+      <div className="font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-tijolo">
         Agendamento feito
       </div>
       <h1 className="mt-3 font-display text-h1 text-tinta text-balance max-w-[20ch]">
@@ -28,7 +28,7 @@ function Content() {
       </p>
 
       {id ? (
-        <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-tinta/5 border border-tinta/10 px-4 py-2 font-mono text-[11px] uppercase tracking-[0.14em] text-tinta/60">
+        <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-tinta/5 border border-tinta/10 px-4 py-2 font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-tinta/60">
           Protocolo <span className="text-tinta font-numeric">{id}</span>
         </div>
       ) : null}
@@ -42,7 +42,7 @@ function Content() {
         </Link>
       </div>
 
-      <div className="mt-14 font-mono text-[11px] uppercase tracking-[0.14em] text-tinta/50">
+      <div className="mt-14 font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-tinta/50">
         Até lá. O café já está moído.
       </div>
     </div>

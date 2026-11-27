@@ -41,7 +41,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </p>
 
           <div className="mt-10 border border-osso/15 corner-chamfer-sm p-6 bg-osso/5 text-left">
-            <div className="font-mono text-[10px] uppercase tracking-wider2 text-mate mb-3">
+            <div className="font-sans text-[10px] uppercase font-semibold tracking-wider2 text-mate mb-3">
               Para ligar o painel
             </div>
             <ol className="space-y-2 font-sans text-[14px] text-osso/85 list-decimal pl-5">
@@ -50,7 +50,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               <li>Adicione <code className="font-mono text-mate">NEXT_PUBLIC_SUPABASE_URL</code>, <code className="font-mono text-mate">NEXT_PUBLIC_SUPABASE_ANON_KEY</code> e <code className="font-mono text-mate">SUPABASE_SERVICE_ROLE_KEY</code> na Vercel</li>
               <li>Faça um redeploy. As 7 telas aparecem aqui</li>
             </ol>
-            <p className="mt-4 font-mono text-[11px] uppercase tracking-wider2 text-osso/50">
+            <p className="mt-4 font-sans text-[11px] uppercase font-semibold tracking-wider2 text-osso/50">
               Guia completo: <code className="text-mate">DEPLOY.md</code> → "Ligar o banco depois"
             </p>
           </div>
@@ -63,7 +63,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               Voltar para o site
             </Link>
           </div>
-          <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.14em] text-osso/40">
+          <p className="mt-4 font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-osso/40">
             O painel do dono funciona sem banco. Seus dados ficam no navegador.
           </p>
         </div>
@@ -78,7 +78,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <Link href="/" aria-label="Site" className="block [&_*]:text-osso">
             <Wordmark className="[&_span]:text-osso" />
           </Link>
-          <div className="mt-2 font-mono text-[10px] uppercase tracking-wider2 text-mate">Painel</div>
+          <div className="mt-2 font-sans text-[10px] uppercase font-semibold tracking-wider2 text-mate">Painel</div>
 
           <nav className="mt-10">
             <ul className="space-y-1">
@@ -99,7 +99,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <div className="mt-10 pt-6 border-t border-osso/10">
             <a
               href="/api/auth/signout"
-              className="font-mono text-[10px] uppercase tracking-wider2 text-osso/60 hover:text-terracota"
+              className="font-sans text-[10px] uppercase font-semibold tracking-wider2 text-osso/60 hover:text-terracota"
             >
               Sair ↗
             </a>

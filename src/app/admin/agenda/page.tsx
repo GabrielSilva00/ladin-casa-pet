@@ -26,7 +26,7 @@ export default async function AgendaPage() {
         eyebrow="agenda"
         title="Duas semanas"
         action={
-          <a href="/admin/bloqueios" className="font-mono text-[11px] uppercase tracking-wider2 text-mate hover:text-terracota">
+          <a href="/admin/bloqueios" className="font-sans text-[11px] uppercase font-semibold tracking-wider2 text-mate hover:text-terracota">
             bloquear data →
           </a>
         }
@@ -51,7 +51,7 @@ function Day({ d, byDay }: { d: Date; byDay: Map<string, Awaited<ReturnType<type
   return (
     <div className={`min-h-[160px] p-3 bg-noite ${isToday ? "ring-1 ring-terracota ring-inset" : ""}`}>
       <div className="flex items-baseline justify-between">
-        <div className="font-mono text-[10px] uppercase tracking-wider2 text-mate">
+        <div className="font-sans text-[10px] uppercase font-semibold tracking-wider2 text-mate">
           {format(d, "EEE", { locale: ptBR })}
         </div>
         <div className="font-display text-[22px] text-osso">{format(d, "d")}</div>

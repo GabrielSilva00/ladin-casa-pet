@@ -66,7 +66,7 @@ export function StepService() {
                     </span>
                   </div>
                   <p className="mt-1 font-sans text-[14px] text-carvao/70">{s.blurb}</p>
-                  <div className="mt-3 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.14em] text-carvao/55">
+                  <div className="mt-3 flex items-center gap-3 font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-carvao/55">
                     <span>{s.durationMin} min</span>
                     {!s.parallel ? <span className="text-terracota">· exclusivo</span> : null}
                   </div>

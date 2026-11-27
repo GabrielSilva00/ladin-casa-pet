@@ -35,7 +35,7 @@ export function BookingPreview() {
               </svg>
             </Link>
 
-            <div className="mt-8 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.14em] text-creme/55">
+            <div className="mt-8 flex items-center gap-3 font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-creme/55">
               <span>ou</span>
               <a href={`https://wa.me/${BRAND.phoneDigits}`} target="_blank" rel="noreferrer" className="accent-wave text-creme/85">
                 chame no WhatsApp
@@ -50,7 +50,7 @@ export function BookingPreview() {
                 className="relative rounded-soft bg-tinta/40 backdrop-blur border border-creme/15 p-5 flex flex-col gap-6 min-h-[180px] transition-colors hover:border-mel/60"
               >
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-mel">
+                  <span className="font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-mel">
                     {s.n}
                   </span>
                   <span className="h-6 w-6 inline-flex items-center justify-center rounded-full bg-mel/20 text-mel font-mono text-[11px]">

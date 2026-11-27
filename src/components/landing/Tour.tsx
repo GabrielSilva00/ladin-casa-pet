@@ -60,7 +60,7 @@ export function Tour() {
                 style={{ backgroundImage: `url(${item.src})` }}
                 aria-hidden
               />
-              <span className="absolute top-3 left-3 inline-flex items-center h-6 px-2 rounded-full bg-tinta/70 backdrop-blur font-mono text-[10px] uppercase tracking-[0.14em] text-creme/90">
+              <span className="absolute top-3 left-3 inline-flex items-center h-6 px-2 rounded-full bg-tinta/70 backdrop-blur font-sans text-[10px] uppercase font-semibold tracking-[0.14em] text-creme/90">
                 {String(i + 1).padStart(2, "0")} / {String(TOUR.length).padStart(2, "0")}
               </span>
             </div>

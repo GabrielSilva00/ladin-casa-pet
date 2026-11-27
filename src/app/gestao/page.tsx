@@ -76,7 +76,7 @@ export default function GestaoPage() {
         <header className="sticky top-0 z-30 bg-creme/90 backdrop-blur border-b border-tinta/10">
           <div className="px-5 md:px-8 py-4 flex items-center gap-4">
             <div className="min-w-0 flex-1">
-              <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-tinta/50">
+              <div className="font-sans text-[10px] uppercase font-semibold tracking-[0.14em] text-tinta/50">
                 Painel · Gestão
               </div>
               <h1 className="mt-0.5 font-display text-[22px] leading-tight text-tinta capitalize truncate">
@@ -101,7 +101,7 @@ export default function GestaoPage() {
               ) : null}
             </div>
 
-            <Link href="/" className="hidden md:inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-tinta/55 hover:text-tijolo px-2">
+            <Link href="/" className="hidden md:inline-flex items-center gap-2 font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-tinta/55 hover:text-tijolo px-2">
               Ver site
               <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden><path d="M2 2h6v6M8 2L2 8" stroke="currentColor" strokeWidth="1.3" fill="none" strokeLinecap="round"/></svg>
             </Link>
@@ -157,7 +157,7 @@ export default function GestaoPage() {
               ))}
             </div>
 
-            <div className="ml-auto flex items-center gap-4 font-mono text-[11px] uppercase tracking-[0.14em] text-tinta/55">
+            <div className="ml-auto flex items-center gap-4 font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-tinta/55">
               <span>
                 <span className="text-tinta/50">Receita</span>{" "}
                 <span className="text-tinta font-numeric">{brl(totalRevenue)}</span>
@@ -179,7 +179,7 @@ export default function GestaoPage() {
         {/* Main content */}
         <main className="px-5 md:px-8 pb-24 pt-8">
           {!ready ? (
-            <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-tinta/40">carregando...</p>
+            <p className="font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-tinta/40">carregando...</p>
           ) : filtered.length === 0 ? (
             <EmptyState hasData={bookings.length > 0} onSeed={seed} onNew={() => setOpenNew(true)} />
           ) : view === "kanban" ? (
@@ -197,7 +197,7 @@ export default function GestaoPage() {
                   </header>
                   <div className="p-3 space-y-2.5 min-h-[160px]">
                     {grouped[col.id].length === 0 ? (
-                      <div className="rounded-lg border border-dashed border-tinta/15 py-6 px-3 font-mono text-[10px] uppercase tracking-[0.14em] text-tinta/35 text-center">
+                      <div className="rounded-lg border border-dashed border-tinta/15 py-6 px-3 font-sans text-[10px] uppercase font-semibold tracking-[0.14em] text-tinta/35 text-center">
                         {col.hint}
                       </div>
                     ) : (
@@ -214,7 +214,7 @@ export default function GestaoPage() {
           )}
 
           {ready && bookings.length > 0 ? (
-            <div className="mt-16 pt-6 border-t border-tinta/10 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.14em] text-tinta/40">
+            <div className="mt-16 pt-6 border-t border-tinta/10 flex items-center justify-between font-sans text-[10px] uppercase font-semibold tracking-[0.14em] text-tinta/40">
               <span>Dados salvos no navegador. {bookings.length} registro{bookings.length === 1 ? "" : "s"}.</span>
               <div className="flex items-center gap-4">
                 <button
@@ -255,7 +255,7 @@ export default function GestaoPage() {
 function Stat({ label, value, dot }: { label: string; value: string; dot: string }) {
   return (
     <div className="rounded-soft border border-tinta/10 bg-creme p-4">
-      <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.14em] text-tinta/55">
+      <div className="flex items-center gap-2 font-sans text-[10px] uppercase font-semibold tracking-[0.14em] text-tinta/55">
         <span className={cn("inline-block h-1.5 w-1.5 rounded-full", dot)} aria-hidden />
         {label}
       </div>
@@ -282,7 +282,7 @@ function BookingTable({
       <div className="overflow-x-auto">
         <table className="w-full text-left font-sans text-[13px]">
           <thead>
-            <tr className="border-b border-tinta/10 bg-creme2/40 text-tinta/60 font-mono text-[10px] uppercase tracking-[0.14em]">
+            <tr className="border-b border-tinta/10 bg-creme2/40 text-tinta/60 font-sans text-[10px] uppercase font-semibold tracking-[0.14em]">
               <th className="px-4 py-3 font-normal">Horário</th>
               <th className="px-4 py-3 font-normal">Pet</th>
               <th className="px-4 py-3 font-normal">Tutor</th>
@@ -312,7 +312,7 @@ function BookingTable({
                   </td>
                   <td className="px-4 py-3 text-tinta/80">{r.serviceName}</td>
                   <td className="px-4 py-3">
-                    <span className={cn("inline-flex items-center rounded-full border px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-[0.1em]", statusLabel[r.status].style)}>
+                    <span className={cn("inline-flex items-center rounded-full border px-2.5 py-0.5 font-sans text-[10px] uppercase font-semibold tracking-[0.1em]", statusLabel[r.status].style)}>
                       {statusLabel[r.status].label}
                     </span>
                   </td>

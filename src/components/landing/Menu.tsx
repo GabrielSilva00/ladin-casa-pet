@@ -34,7 +34,7 @@ export function Menu() {
                   style={{ backgroundImage: `url(${item.img})` }}
                   aria-hidden
                 />
-                <span className="absolute top-3 left-3 inline-flex items-center h-6 px-2.5 rounded-full bg-creme/95 text-tinta font-mono text-[10px] uppercase tracking-[0.14em]">
+                <span className="absolute top-3 left-3 inline-flex items-center h-6 px-2.5 rounded-full bg-creme/95 text-tinta font-sans text-[10px] uppercase font-semibold tracking-[0.14em]">
                   {item.tag}
                 </span>
                 <span className="absolute top-3 right-3 inline-flex items-center h-7 px-3 rounded-full bg-tijolo text-creme font-mono text-[11px] font-numeric">
@@ -62,7 +62,7 @@ export function Menu() {
                 Também na casa
               </h3>
             </div>
-            <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-tinta/55 hidden sm:inline">
+            <span className="font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-tinta/55 hidden sm:inline">
               {MENU_SAMPLE.length} itens
             </span>
           </header>
@@ -92,7 +92,7 @@ export function Menu() {
             ))}
           </ul>
 
-          <footer className="px-6 md:px-8 py-4 border-t border-tinta/15 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.14em] text-tinta/55">
+          <footer className="px-6 md:px-8 py-4 border-t border-tinta/15 flex items-center justify-between font-sans text-[10px] uppercase font-semibold tracking-[0.14em] text-tinta/55">
             <span>Preços sazonais — Nov/26</span>
             <span>Pede sem pressa.</span>
           </footer>

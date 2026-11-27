@@ -41,15 +41,15 @@ export function BookingDrawer({
         className="absolute inset-0 bg-carvao/50 backdrop-blur-sm animate-rise"
         onClick={onClose}
       />
-      <aside className="absolute right-0 top-0 bottom-0 w-full max-w-[520px] bg-osso shadow-[-20px_0_60px_-20px_rgba(15,14,12,0.4)] overflow-y-auto animate-rise">
+      <aside className="absolute right-0 top-0 bottom-0 w-full max-w-[520px] bg-osso shadow-[-20px_0_60px_-20px_rgba(15,14,12,0.4)] overflow-y-auto overscroll-contain animate-rise" data-lenis-prevent>
         <header className="sticky top-0 z-10 bg-osso border-b border-carvao/10 px-8 py-5 flex items-center justify-between">
-          <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-terracota">
+          <span className="font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-terracota">
             Agendamento
           </span>
           <button
             type="button"
             onClick={onClose}
-            className="font-mono text-[11px] uppercase tracking-[0.14em] text-carvao/60 hover:text-carvao"
+            className="font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-carvao/60 hover:text-carvao"
             aria-label="Fechar"
           >
             fechar ✕
@@ -67,7 +67,7 @@ export function BookingDrawer({
 
           <div className="mt-8 space-y-6 font-sans text-[15px]">
             <div>
-              <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-carvao/55 mb-1">
+              <div className="font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-carvao/55 mb-1">
                 Serviço
               </div>
               <div className="text-carvao">{booking.serviceName}</div>
@@ -77,14 +77,14 @@ export function BookingDrawer({
             </div>
 
             <div>
-              <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-carvao/55 mb-1">
+              <div className="font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-carvao/55 mb-1">
                 Quando
               </div>
               <div className="text-carvao capitalize">{niceDate}</div>
             </div>
 
             <div>
-              <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-carvao/55 mb-1">
+              <div className="font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-carvao/55 mb-1">
                 Tutor
               </div>
               <div className="text-carvao">{booking.tutorName}</div>
@@ -111,7 +111,7 @@ export function BookingDrawer({
 
             {booking.notes ? (
               <div>
-                <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-carvao/55 mb-1">
+                <div className="font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-carvao/55 mb-1">
                   Observações
                 </div>
                 <div className="text-carvao/85">{booking.notes}</div>
@@ -120,7 +120,7 @@ export function BookingDrawer({
           </div>
 
           <div className="mt-10">
-            <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-carvao/55 mb-3">
+            <div className="font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-carvao/55 mb-3">
               Estado
             </div>
             <div className="flex gap-2">
@@ -151,7 +151,7 @@ export function BookingDrawer({
                   onClose();
                 }
               }}
-              className="font-mono text-[11px] uppercase tracking-[0.14em] text-vinho hover:text-carvao transition-colors"
+              className="font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-vinho hover:text-carvao transition-colors"
             >
               Remover agendamento
             </button>

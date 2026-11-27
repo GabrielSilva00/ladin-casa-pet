@@ -15,7 +15,7 @@ export function Testimonials() {
             href="https://www.google.com/maps/place/Cabana+Pet+Caf%C3%A9"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-tinta/70 hover:text-tijolo"
+            className="inline-flex items-center gap-2 font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-tinta/70 hover:text-tijolo"
           >
             <span className="text-mel">★★★★★</span> 5,0 no Google · 242 avaliações
           </a>

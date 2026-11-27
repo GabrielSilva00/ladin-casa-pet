@@ -27,11 +27,11 @@ export function Hero() {
       <div className="container relative z-10 grid grid-cols-12 gap-6 items-center min-h-[72svh]">
         {/* Coluna esquerda: texto */}
         <div className="col-span-12 md:col-span-7 lg:col-span-6 text-left">
-          <h1 className="font-display font-medium text-baunilha text-[clamp(2.25rem,5.6vw,4.5rem)] leading-[0.98] tracking-[-0.035em] max-w-[14ch] text-balance">
-            Banho pro pet, <em className="italic" style={{ color: "#D4855E" }}>café pra você.</em>
+          <h1 className="font-display font-semibold text-baunilha text-[clamp(2.25rem,5.6vw,4.5rem)] leading-[1] tracking-[-0.03em] max-w-[14ch] text-balance">
+            Banho pro pet, <em className="italic text-lavanda3">café pra você.</em>
           </h1>
 
-          <p className="mt-6 font-sans text-[16px] md:text-[17px] leading-[1.55] max-w-[42ch]" style={{ color: "#E8DCC4" }}>
+          <p className="mt-6 font-sans text-[16px] md:text-[17px] leading-[1.55] max-w-[42ch] text-baunilha/80">
             Acompanhe o banho pelo vidro enquanto toma um cafezinho. Vila Paraíso, Campinas.
           </p>
 
@@ -47,7 +47,7 @@ export function Hero() {
             </Link>
           </div>
 
-          <div className="mt-10 flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.14em] text-baunilha/55">
+          <div className="mt-10 flex items-center gap-4 font-sans text-[10px] uppercase font-semibold tracking-[0.14em] text-baunilha/55">
             <span>{BRAND.neighborhood}, {BRAND.city}</span>
             <span className="h-px w-6 bg-baunilha/35" aria-hidden />
             <span>Terça a sábado · 9h às 18h</span>
@@ -69,7 +69,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="container absolute inset-x-0 bottom-5 z-10 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.14em] text-baunilha/45">
+      <div className="container absolute inset-x-0 bottom-5 z-10 flex items-center justify-between font-sans text-[10px] uppercase font-semibold tracking-[0.14em] text-baunilha/45">
         <span>Desde {BRAND.foundedYear}</span>
         <span className="hidden md:inline">role ↓</span>
       </div>

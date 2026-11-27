@@ -18,7 +18,7 @@ export default async function ConfigPage() {
 
       <section className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="border border-osso/10 corner-chamfer-sm p-6 bg-osso/5">
-          <div className="font-mono text-[10px] uppercase tracking-wider2 text-mate mb-2">Horário</div>
+          <div className="font-sans text-[10px] uppercase font-semibold tracking-wider2 text-mate mb-2">Horário</div>
           <div className="font-display text-[24px] text-osso">
             {work?.start ?? "09:00"} às {work?.end ?? "18:00"}
           </div>
@@ -28,7 +28,7 @@ export default async function ConfigPage() {
         </div>
 
         <div className="border border-osso/10 corner-chamfer-sm p-6 bg-osso/5">
-          <div className="font-mono text-[10px] uppercase tracking-wider2 text-mate mb-2">Slot</div>
+          <div className="font-sans text-[10px] uppercase font-semibold tracking-wider2 text-mate mb-2">Slot</div>
           <div className="font-display text-[24px] text-osso">
             {String(settings.slot_minutes ?? 30)} minutos
           </div>
@@ -36,14 +36,14 @@ export default async function ConfigPage() {
         </div>
 
         <div className="border border-osso/10 corner-chamfer-sm p-6 bg-osso/5">
-          <div className="font-mono text-[10px] uppercase tracking-wider2 text-mate mb-2">Paralelos</div>
+          <div className="font-sans text-[10px] uppercase font-semibold tracking-wider2 text-mate mb-2">Paralelos</div>
           <div className="font-display text-[24px] text-osso">
             {String(settings.max_parallel ?? 2)} banhos simultâneos
           </div>
         </div>
 
         <div className="border border-osso/10 corner-chamfer-sm p-6 bg-osso/5">
-          <div className="font-mono text-[10px] uppercase tracking-wider2 text-mate mb-2">Buffer</div>
+          <div className="font-sans text-[10px] uppercase font-semibold tracking-wider2 text-mate mb-2">Buffer</div>
           <div className="font-display text-[24px] text-osso">
             {String(settings.buffer_minutes ?? 15)} minutos
           </div>
@@ -51,7 +51,7 @@ export default async function ConfigPage() {
         </div>
       </section>
 
-      <p className="mt-10 font-mono text-[11px] uppercase tracking-wider2 text-osso/40">
+      <p className="mt-10 font-sans text-[11px] uppercase font-semibold tracking-wider2 text-osso/40">
         Edição inline e mensagens automáticas de WhatsApp. Próxima entrega.
       </p>
     </div>
