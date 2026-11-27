@@ -74,12 +74,12 @@ export default function GestaoPage() {
       <div className="flex-1 min-w-0">
         {/* Topbar */}
         <header className="sticky top-0 z-30 bg-creme/90 backdrop-blur border-b border-tinta/10">
-          <div className="px-5 md:px-8 py-4 flex items-center gap-4">
+          <div className="pl-16 md:pl-8 pr-5 md:pr-8 py-4 flex items-center gap-3 md:gap-4">
             <div className="min-w-0 flex-1">
               <div className="font-sans text-[10px] uppercase font-semibold tracking-[0.14em] text-tinta/50">
                 Painel · Gestão
               </div>
-              <h1 className="mt-0.5 font-display text-[22px] leading-tight text-tinta capitalize truncate">
+              <h1 className="mt-0.5 font-display text-[18px] md:text-[22px] font-semibold leading-tight text-tinta capitalize truncate">
                 {todayLabel}
               </h1>
             </div>
@@ -117,7 +117,7 @@ export default function GestaoPage() {
           </div>
 
           {/* Secondary bar: tabs + stats */}
-          <div className="px-5 md:px-8 pb-4 flex flex-wrap items-center gap-3">
+          <div className="pl-16 md:pl-8 pr-5 md:pr-8 pb-4 flex flex-wrap items-center gap-3">
             <div className="inline-flex items-center gap-1 p-0.5 rounded-full bg-tinta/5 border border-tinta/10">
               {(["hoje", "semana"] as Scope[]).map((s) => (
                 <button

@@ -15,21 +15,14 @@ export const InputField = React.forwardRef<HTMLInputElement, InputFieldProps>(
     const generated = React.useId();
     const inputId = id ?? generated;
     const [focused, setFocused] = React.useState(false);
-    const [innerValue, setInnerValue] = React.useState<string>(
-      value !== undefined ? String(value) : defaultValue !== undefined ? String(defaultValue) : ""
-    );
-    React.useEffect(() => {
-      if (value !== undefined) setInnerValue(String(value));
-    }, [value]);
-    const hasVal = innerValue.length > 0;
 
     return (
       <div className={cn("group relative", className)}>
         <label
           htmlFor={inputId}
           className={cn(
-            "block pb-2 font-sans text-[11px] uppercase font-semibold tracking-[0.14em] font-medium transition-colors",
-            error ? "text-tijolo2" : focused ? "text-tijolo" : "text-tinta/60"
+            "block pb-2 font-sans text-[13px] font-bold transition-colors",
+            error ? "text-lavanda2" : focused ? "text-lavanda2" : "text-tinta"
           )}
         >
           {label}
@@ -37,17 +30,15 @@ export const InputField = React.forwardRef<HTMLInputElement, InputFieldProps>(
 
         <div
           className={cn(
-            "flex items-center gap-2 rounded-xl border bg-creme px-4 py-3 transition-all",
+            "flex items-center gap-2 rounded-full border-2 bg-papel px-5 py-3 transition-all",
             error
-              ? "border-tijolo2"
+              ? "border-lavanda2 ring-4 ring-lavanda2/15"
               : focused
-              ? "border-tijolo ring-4 ring-tijolo/10"
-              : hasVal
-              ? "border-tinta/25"
-              : "border-tinta/15 group-hover:border-tinta/30"
+              ? "border-lavanda ring-4 ring-lavanda/15"
+              : "border-tinta/15 group-hover:border-lavanda/60"
           )}
         >
-          {leading ? <span className="text-tinta/55">{leading}</span> : null}
+          {leading ? <span className="text-tinta/55 shrink-0">{leading}</span> : null}
           <input
             ref={ref}
             id={inputId}
@@ -55,16 +46,15 @@ export const InputField = React.forwardRef<HTMLInputElement, InputFieldProps>(
             defaultValue={defaultValue}
             onFocus={(e) => { setFocused(true); props.onFocus?.(e); }}
             onBlur={(e) => { setFocused(false); props.onBlur?.(e); }}
-            onChange={(e) => { setInnerValue(e.target.value); props.onChange?.(e); }}
-            className="block w-full bg-transparent text-[15px] text-tinta placeholder-tinta/35 outline-none"
+            className="block w-full bg-transparent text-[15px] text-tinta placeholder-tinta/35 outline-none font-sans"
             {...props}
           />
         </div>
 
         {error ? (
-          <p className="mt-1.5 font-sans text-[12px] text-tijolo2">{error}</p>
+          <p className="mt-2 font-sans text-[12px] font-semibold text-lavanda2">{error}</p>
         ) : hint ? (
-          <p className="mt-1.5 font-sans text-[12px] text-tinta/55">{hint}</p>
+          <p className="mt-2 font-sans text-[12px] text-tinta/55">{hint}</p>
         ) : null}
       </div>
     );
@@ -86,8 +76,8 @@ export const TextareaField = React.forwardRef<HTMLTextAreaElement, TextareaField
     return (
       <div className={cn("relative", className)}>
         <label htmlFor={textareaId} className={cn(
-          "block pb-2 font-sans text-[11px] uppercase font-semibold tracking-[0.14em] font-medium transition-colors",
-          error ? "text-tijolo2" : focused ? "text-tijolo" : "text-tinta/60"
+          "block pb-2 font-sans text-[13px] font-bold transition-colors",
+          error ? "text-lavanda2" : focused ? "text-lavanda2" : "text-tinta"
         )}>
           {label}
         </label>
@@ -97,15 +87,15 @@ export const TextareaField = React.forwardRef<HTMLTextAreaElement, TextareaField
           onFocus={(e) => { setFocused(true); props.onFocus?.(e); }}
           onBlur={(e) => { setFocused(false); props.onBlur?.(e); }}
           className={cn(
-            "block w-full rounded-xl border bg-creme px-4 py-3 text-[15px] text-tinta placeholder-tinta/35 outline-none min-h-[88px] resize-y transition-all",
-            error ? "border-tijolo2" : focused ? "border-tijolo ring-4 ring-tijolo/10" : "border-tinta/15 hover:border-tinta/30"
+            "block w-full rounded-[22px] border-2 bg-papel px-5 py-3.5 text-[15px] text-tinta placeholder-tinta/35 outline-none min-h-[96px] resize-y transition-all font-sans",
+            error ? "border-lavanda2 ring-4 ring-lavanda2/15" : focused ? "border-lavanda ring-4 ring-lavanda/15" : "border-tinta/15 hover:border-lavanda/60"
           )}
           {...props}
         />
         {error ? (
-          <p className="mt-1.5 font-sans text-[12px] text-tijolo2">{error}</p>
+          <p className="mt-2 font-sans text-[12px] font-semibold text-lavanda2">{error}</p>
         ) : hint ? (
-          <p className="mt-1.5 font-sans text-[12px] text-tinta/55">{hint}</p>
+          <p className="mt-2 font-sans text-[12px] text-tinta/55">{hint}</p>
         ) : null}
       </div>
     );
@@ -128,7 +118,7 @@ export function PillGroup<T extends string>({
 }) {
   return (
     <div>
-      <div className="pb-2 font-sans text-[11px] uppercase font-semibold tracking-[0.14em] text-tinta/60 font-medium">{label}</div>
+      <div className="pb-2 font-sans text-[13px] font-bold text-tinta">{label}</div>
       <div className="flex flex-wrap gap-2">
         {options.map((opt) => {
           const active = value === opt.value;
@@ -139,10 +129,10 @@ export function PillGroup<T extends string>({
               onClick={() => onChange(opt.value)}
               aria-pressed={active}
               className={cn(
-                "rounded-full border px-5 py-2.5 font-sans text-[13px] font-medium transition-all duration-200 active:scale-[0.97]",
+                "rounded-full border-2 px-5 py-2.5 font-sans text-[13px] font-semibold transition-all duration-200 active:scale-[0.97]",
                 active
-                  ? "border-tijolo bg-tijolo text-creme shadow-[0_6px_14px_-8px_rgba(178,70,38,0.65)]"
-                  : "border-tinta/20 bg-creme text-tinta hover:border-tijolo hover:text-tijolo"
+                  ? "border-lavanda bg-lavanda text-papel shadow-[0_6px_14px_-8px_rgba(135,120,240,0.7)]"
+                  : "border-tinta/15 bg-papel text-tinta hover:border-lavanda hover:text-lavanda2"
               )}
             >
               {opt.label}
@@ -150,7 +140,7 @@ export function PillGroup<T extends string>({
           );
         })}
       </div>
-      {error ? <p className="mt-2 font-sans text-[12px] text-tijolo2">{error}</p> : null}
+      {error ? <p className="mt-2 font-sans text-[12px] font-semibold text-lavanda2">{error}</p> : null}
     </div>
   );
 }

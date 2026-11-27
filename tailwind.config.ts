@@ -11,9 +11,9 @@ const config: Config = {
     },
     extend: {
       colors: {
-        /* ===== PALETA LAVANDA + BEGE (tipo pet-shop template) ===== */
-        baunilha:  "#F3E8D7",   // bg principal: bege cremoso
-        baunilha2: "#EBDBC0",   // bg card (um tom mais escuro)
+        /* ===== PALETA LAVANDA + AMARELO CLARO ===== */
+        baunilha:  "#FFF8D9",   // bg principal: amarelo bem claro
+        baunilha2: "#FDEEB0",   // bg card (amarelo um tom acima)
         tinta:     "#2A2340",   // texto / dark: roxo-noite profundo
         lavanda:   "#8778F0",   // acento principal: lavanda média
         lavanda2:  "#6253D8",   // lavanda escura (hover)
@@ -21,9 +21,9 @@ const config: Config = {
         papel:     "#FFFFFF",   // branco puro (texto em cima do lavanda)
 
         /* ===== ALIASES LEGADOS (tudo aponta pra nova paleta) ===== */
-        creme:     "#F3E8D7",  // → baunilha
-        creme2:    "#EBDBC0",  // → baunilha2
-        osso:      "#F3E8D7",  // → baunilha
+        creme:     "#FFF8D9",  // → baunilha
+        creme2:    "#FDEEB0",  // → baunilha2
+        osso:      "#FFF8D9",  // → baunilha
         carvao:    "#2A2340",  // → tinta
         noite:     "#2A2340",  // → tinta
         clorofila: "#6253D8",  // → lavanda2 (antes era musgo verde, agora é lavanda escura)
