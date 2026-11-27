@@ -1,21 +1,22 @@
-import { Instrument_Serif, Manrope, JetBrains_Mono } from "next/font/google";
+import { Fraunces, Figtree, IBM_Plex_Mono } from "next/font/google";
 
-export const fraunces = Instrument_Serif({
+export const fraunces = Fraunces({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["400"],
   style: ["normal", "italic"],
+  axes: ["opsz", "SOFT", "WONK"],
   display: "swap"
 });
 
-export const inter = Manrope({
+export const inter = Figtree({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap"
 });
 
-export const jetbrains = JetBrains_Mono({
+export const jetbrains = IBM_Plex_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
+  weight: ["400", "500"],
   display: "swap"
 });

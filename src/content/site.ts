@@ -1,5 +1,4 @@
 export const NAV = [
-  { href: "#manifesto", label: "Manifesto" },
   { href: "#servicos", label: "Serviços" },
   { href: "#cardapio", label: "Cardápio" },
   { href: "#cabana", label: "A Cabana" },
@@ -18,28 +17,52 @@ export const SERVICES = [
   {
     n: "02",
     title: "Café",
-    support: "Grãos de especialidade. Lanches frescos.",
+    support: "Grão de especialidade, lanches frescos todo dia.",
     fromCents: 1200,
     slug: "cafe",
-    img: "/images/service-cafe.jpg"
+    img: "/images/lazer-41.jpg"
   },
   {
     n: "03",
     title: "Gramado",
-    support: "Seguro, cercado, cães soltos.",
+    support: "Seguro, cercado, cães soltos de verdade.",
     fromCents: 0,
     slug: "gramado",
-    img: "/images/service-convivencia.jpg"
+    img: "/images/caes-44.jpg"
   }
 ] as const;
 
 export const TOUR = [
-  { src: "/images/tour-deque.jpg", caption: "o deque. onde tudo acontece devagar.", ratio: "4/5" },
-  { src: "/images/tour-banheira.jpg", caption: "a banheira. acompanhe pelo vidro.", ratio: "1/1" },
-  { src: "/images/tour-copa.jpg", caption: "a copa. grãos do dia, moídos na hora.", ratio: "3/4" },
-  { src: "/images/tour-jardim.jpg", caption: "o gramado. onde o seu bicho faz amigos.", ratio: "16/9" },
-  { src: "/images/tour-varanda.jpg", caption: "a varanda. o seu lugar na cabana.", ratio: "4/5" },
-  { src: "/images/tour-detalhe.jpg", caption: "os detalhes. feitos à mão.", ratio: "1/1" }
+  { src: "/images/lugar-65.jpg", caption: "a fachada. a cancela de madeira.", ratio: "3/4" },
+  { src: "/images/service-banho.jpg", caption: "a banheira. acompanhe pelo vidro.", ratio: "4/5" },
+  { src: "/images/lugar-01.jpg", caption: "o deque. onde tudo acontece devagar.", ratio: "3/4" },
+  { src: "/images/caes-53.jpg", caption: "o gramado. seu bicho faz amigos.", ratio: "3/4" },
+  { src: "/images/lugar-43.jpg", caption: "a varanda. o seu lugar na cabana.", ratio: "4/5" },
+  { src: "/images/lugar-05.jpg", caption: "os detalhes. feitos à mão.", ratio: "3/4" }
+] as const;
+
+export const MENU_HIGHLIGHTS = [
+  {
+    name: "Flat white da casa",
+    desc: "leite texturizado, grão do dia moído na hora.",
+    priceCents: 1300,
+    img: "/images/lazer-41.jpg",
+    tag: "quente"
+  },
+  {
+    name: "Croissant de amendoim",
+    desc: "receita da casa, massa de dois dias.",
+    priceCents: 1400,
+    img: "/images/lazer-04.jpg",
+    tag: "assado hoje"
+  },
+  {
+    name: "Petit-gâteau pro pet",
+    desc: "farinha de arroz, sem açúcar, pro cachorro.",
+    priceCents: 1800,
+    img: "/images/lazer-68.jpg",
+    tag: "pet"
+  }
 ] as const;
 
 export const MENU_SAMPLE = [
@@ -51,27 +74,27 @@ export const MENU_SAMPLE = [
   { name: "Sagu de uva", desc: "sobremesa da infância, do jeito certo", priceCents: 1600 }
 ] as const;
 
-// Reviews reais do Google · 5,0 estrelas, 242 avaliações
+// Reviews reais do Google
 export const TESTIMONIALS = [
   {
     text: "Minha doguinha ficou linda e cheirosa enquanto eu tomei um café. Recomendo.",
-    author: "Nathalia Penucho Cristovão",
-    meta: "no Google",
-    neighborhood: "há 2 meses",
-    rotate: "-1deg"
+    author: "Nathalia P. Cristovão",
+    initials: "NC",
+    when: "há 2 meses",
+    color: "#B24626"
   },
   {
-    text: "Experiência única. O lugar é lindo, aconchegante e estruturado. Enquanto seu pet toma banho você toma um cafezinho super gostoso. Dá pra acompanhar o banho porque a parte é de vidro.",
-    author: "Izabelle Lemos Sene Ribeiro",
-    meta: "no Google",
-    neighborhood: "há 1 ano",
-    rotate: "1.5deg"
+    text: "Enquanto seu pet toma banho você toma um cafezinho super gostoso. Dá pra acompanhar o banho porque a parte é de vidro.",
+    author: "Izabelle L. S. Ribeiro",
+    initials: "IR",
+    when: "há 1 ano",
+    color: "#394A33"
   },
   {
-    text: "Experiência incrível. Recepção com as filhas de pelo, excepcional. Lugar de gramado, seguro, aconchegante. Nunca vi minhas pets tão felizes para um banho. Sem medo, sem tremor.",
-    author: "Neusa Luciene Dunder",
-    meta: "no Google",
-    neighborhood: "há 1 ano",
-    rotate: "-0.5deg"
+    text: "Lugar de gramado, seguro, aconchegante. Nunca vi minhas pets tão felizes para um banho. Sem medo, sem tremor.",
+    author: "Neusa L. Dunder",
+    initials: "ND",
+    when: "há 1 ano",
+    color: "#E0A935"
   }
 ] as const;

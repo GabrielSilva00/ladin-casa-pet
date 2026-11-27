@@ -1,50 +1,79 @@
 import Link from "next/link";
-import { Eyebrow } from "@/components/ui/Chip";
-import { MENU_SAMPLE } from "@/content/site";
+import { MENU_HIGHLIGHTS, MENU_SAMPLE } from "@/content/site";
 import { brl } from "@/lib/utils";
 
 export function Menu() {
   return (
     <section id="cardapio" className="py-section">
       <div className="container">
-        <div className="grid grid-cols-12 gap-6 items-end">
-          <div className="col-span-12 md:col-span-7">
-            <Eyebrow>Do café à cozinha</Eyebrow>
-            <h2 className="mt-4 font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.98] tracking-[-0.025em] text-carvao text-balance">
-              Curto, sazonal, <em className="italic text-terracota">fresco todo dia.</em>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div>
+            <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-tijolo">
+              04 · do café à cozinha
+            </div>
+            <h2 className="mt-4 font-display text-h2 text-tinta text-balance max-w-[18ch]">
+              Curto, sazonal, <em className="italic">fresco todo dia.</em>
             </h2>
           </div>
-          <div className="col-span-12 md:col-span-3 md:col-start-10 font-mono text-[11px] uppercase tracking-[0.14em] text-carvao/55">
-            Terça a sábado
-            <br />
-            09:00 às 17:30
-          </div>
+          <Link href="/cardapio" className="btn-ghost w-fit">
+            Cardápio completo
+            <svg width="12" height="10" viewBox="0 0 12 10" aria-hidden>
+              <path d="M1 5h9M7 1l4 4-4 4" stroke="currentColor" strokeWidth="1.4" fill="none" strokeLinecap="round"/>
+            </svg>
+          </Link>
         </div>
 
-        <ul className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-14 gap-y-0">
-          {MENU_SAMPLE.map((item) => (
+        {/* Destaques com imagem */}
+        <ul className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-16">
+          {MENU_HIGHLIGHTS.map((item) => (
             <li
               key={item.name}
-              className="group flex items-end justify-between gap-6 border-t border-carvao/15 py-6 last:border-b md:[&:nth-child(2)]:border-t md:[&:first-child]:border-t"
+              className="group relative overflow-hidden rounded-soft bg-creme2/70 border border-tinta/10 transition-all duration-300 hover:-translate-y-1 hover:border-tijolo/40 hover:shadow-card"
             >
-              <div className="min-w-0">
-                <h3 className="font-display italic text-[24px] leading-none text-carvao">
+              <div className="relative aspect-[5/4] overflow-hidden warm-filter">
+                <div
+                  className="bg-img absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                  style={{ backgroundImage: `url(${item.img})` }}
+                  aria-hidden
+                />
+                <span className="absolute top-3 left-3 inline-flex items-center h-6 px-2.5 rounded-full bg-creme/95 text-tinta font-mono text-[10px] uppercase tracking-[0.14em]">
+                  {item.tag}
+                </span>
+                <span className="absolute top-3 right-3 inline-flex items-center h-7 px-3 rounded-full bg-tijolo text-creme font-mono text-[11px] font-numeric">
+                  {brl(item.priceCents)}
+                </span>
+              </div>
+              <div className="px-5 py-5">
+                <h3 className="font-display text-[22px] leading-tight text-tinta">
                   {item.name}
                 </h3>
-                <p className="mt-2 font-sans text-[14px] text-carvao/65 truncate">{item.desc}</p>
-              </div>
-              <div className="shrink-0 text-right">
-                <span className="font-numeric font-mono text-[14px] text-carvao">{brl(item.priceCents)}</span>
-                <div className="mt-2 h-px w-10 bg-terracota opacity-0 group-hover:opacity-100 transition-opacity ml-auto" />
+                <p className="mt-1.5 font-sans text-[14px] text-tinta/70 leading-snug">{item.desc}</p>
               </div>
             </li>
           ))}
         </ul>
 
-        <div className="mt-14">
-          <Link href="/cardapio" className="font-sans text-[15px] text-carvao accent-wave">
-            Ver cardápio completo
-          </Link>
+        {/* Lista completa estilo cardápio impresso */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-14 border-t border-tinta/15 pt-10">
+          <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-tinta/55 mb-4 md:col-span-2">
+            Também na casa
+          </div>
+          {MENU_SAMPLE.map((item, idx) => (
+            <div
+              key={item.name}
+              className={`flex items-baseline gap-4 py-4 ${idx > 1 ? "border-t border-tinta/10" : ""} md:[&:nth-child(2)]:border-t-0 md:[&:nth-child(3)]:border-t-0`}
+            >
+              <div className="min-w-0 flex-1">
+                <h4 className="font-display italic text-[19px] leading-tight text-tinta">
+                  {item.name}
+                </h4>
+                <p className="mt-1 font-sans text-[13px] text-tinta/60">{item.desc}</p>
+              </div>
+              <div className="font-mono text-[13px] text-tinta font-numeric whitespace-nowrap">
+                {brl(item.priceCents)}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

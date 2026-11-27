@@ -1,33 +1,11 @@
 import { cn } from "@/lib/utils";
 
-export function Wordmark({ className, variant = "default" }: { className?: string; variant?: "default" | "stacked" | "outline" }) {
-  if (variant === "stacked") {
-    return (
-      <span className={cn("inline-flex flex-col leading-none", className)}>
-        <span className="font-display text-[26px] font-medium tracking-tighter2 text-carvao">Cabana</span>
-        <span className="h-px w-8 bg-terracota my-[6px]" aria-hidden />
-        <span className="font-sans text-[10px] uppercase tracking-[0.32em] text-carvao/80">Pet Café</span>
-      </span>
-    );
-  }
-  if (variant === "outline") {
-    return (
-      <span
-        className={cn("font-display font-light tracking-tighter2 leading-none", className)}
-        style={{
-          WebkitTextStroke: "1px #1A1512",
-          color: "transparent"
-        }}
-      >
-        CABANA
-      </span>
-    );
-  }
+export function Wordmark({ className }: { className?: string }) {
   return (
-    <span className={cn("inline-flex items-baseline gap-2 leading-none", className)}>
-      <span className="font-display text-[22px] font-medium tracking-tighter2 text-carvao">Cabana</span>
-      <span className="h-[14px] w-px bg-terracota" aria-hidden />
-      <span className="font-sans text-[10px] uppercase tracking-[0.3em] text-carvao/80">Pet Café</span>
+    <span className={cn("inline-flex items-baseline gap-2 leading-none text-inherit", className)}>
+      <span className="font-display text-[22px] font-medium tracking-[-0.03em]">Cabana</span>
+      <span className="h-[13px] w-px bg-tijolo opacity-80" aria-hidden />
+      <span className="font-sans text-[10px] uppercase tracking-[0.3em] opacity-75">Pet Café</span>
     </span>
   );
 }
@@ -38,7 +16,7 @@ export function LogoMark({ className, size = 56 }: { className?: string; size?: 
       viewBox="0 0 64 64"
       width={size}
       height={size}
-      className={cn("text-terracota", className)}
+      className={cn("text-tijolo", className)}
       aria-hidden
     >
       <path

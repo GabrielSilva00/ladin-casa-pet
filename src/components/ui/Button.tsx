@@ -3,23 +3,23 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const button = cva(
-  "group/btn relative inline-flex items-center justify-center gap-2 overflow-hidden font-sans font-medium tracking-wide transition-all duration-300 ease-out disabled:opacity-40 disabled:cursor-not-allowed select-none active:scale-[0.98]",
+  "group/btn relative inline-flex items-center justify-center gap-2 overflow-hidden font-sans font-medium transition-all duration-300 ease-out disabled:opacity-40 disabled:cursor-not-allowed select-none active:scale-[0.98]",
   {
     variants: {
       variant: {
         primary:
-          "bg-terracota text-osso rounded-full shadow-[0_10px_24px_-14px_rgba(221,107,60,0.65)] hover:shadow-[0_18px_40px_-16px_rgba(221,107,60,0.85)] hover:-translate-y-[2px] before:absolute before:inset-0 before:-translate-x-full before:bg-carvao/20 before:transition-transform before:duration-700 before:ease-out hover:before:translate-x-0",
+          "bg-tijolo text-creme rounded-full shadow-[0_10px_24px_-14px_rgba(178,70,38,0.65)] hover:bg-tijolo2 hover:shadow-[0_18px_40px_-16px_rgba(178,70,38,0.85)] hover:-translate-y-[2px]",
         dark:
-          "bg-carvao text-osso rounded-full hover:bg-noite hover:-translate-y-[2px]",
+          "bg-tinta text-creme rounded-full hover:-translate-y-[2px]",
         ghost:
-          "bg-transparent text-carvao border border-carvao/30 rounded-full hover:border-carvao hover:bg-carvao hover:text-osso",
+          "bg-transparent text-tinta border border-tinta/25 rounded-full hover:border-tijolo hover:text-tijolo",
         link:
-          "text-carvao bg-transparent"
+          "text-tinta bg-transparent"
       },
       size: {
-        sm: "px-5 py-2.5 text-[13px]",
-        md: "px-7 py-4 text-[14px]",
-        lg: "px-9 py-[18px] text-[15px]"
+        sm: "px-4 py-2 text-[13px]",
+        md: "px-6 py-3 text-[14px]",
+        lg: "px-7 py-3.5 text-[15px]"
       }
     },
     defaultVariants: { variant: "primary", size: "md" }
@@ -38,7 +38,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const defaultArrow = variant !== "link" && showArrow !== false;
     return (
       <button ref={ref} className={cn(button({ variant, size }), className)} {...props}>
-        <span className="relative z-[1] inline-flex items-center gap-2.5">
+        <span className="relative z-[1] inline-flex items-center gap-2">
           {variant === "link" ? (
             <span className="accent-wave">{children}</span>
           ) : (

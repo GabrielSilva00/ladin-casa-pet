@@ -1,45 +1,72 @@
 import Link from "next/link";
-import { Eyebrow } from "@/components/ui/Chip";
-import { Button } from "@/components/ui/Button";
+import { BRAND } from "@/lib/utils";
 
 const STEPS = [
-  { n: "01", t: "Diga quem é o seu pet", d: "Nome, porte, pelagem." },
-  { n: "02", t: "Escolha dia e hora", d: "14 dias à frente. Slots de 30 min." },
-  { n: "03", t: "Confirme no WhatsApp", d: "A gente responde em instantes." }
+  { n: "01", t: "Quem é o seu pet", d: "Nome, porte, pelagem." },
+  { n: "02", t: "Dia e hora", d: "Slots de 30 min, 14 dias à frente." },
+  { n: "03", t: "Confirme", d: "A gente te espera com café quente." }
 ];
 
 export function BookingPreview() {
   return (
-    <section id="agendamento" className="py-sectionTight bg-clorofila text-osso">
-      <div className="container grid grid-cols-12 gap-10 items-center">
-        <div className="col-span-12 md:col-span-5">
-          <Eyebrow className="text-mate">Dia e hora</Eyebrow>
-          <h2 className="mt-4 font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.98] tracking-[-0.025em] text-osso text-balance">
-            Marque o banho.<br />
-            <em className="italic text-mate">A gente cuida do resto.</em>
-          </h2>
-          <p className="mt-6 font-sans text-[17px] text-osso/80 max-w-[42ch]">
-            Três passos. Dois minutos.
-          </p>
-          <Link href="/agendar" className="mt-8 inline-block">
-            <Button size="lg" className="bg-terracota text-osso">Começar agendamento</Button>
-          </Link>
-        </div>
+    <section id="agendamento" className="py-section bg-musgo text-creme relative overflow-hidden">
+      <div
+        aria-hidden
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage:
+            "radial-gradient(ellipse at top right, rgba(224,169,53,0.35), transparent 50%), radial-gradient(ellipse at bottom left, rgba(178,70,38,0.4), transparent 50%)"
+        }}
+      />
+      <div className="container relative">
+        <div className="grid grid-cols-12 gap-8 md:gap-12 items-start">
+          <div className="col-span-12 md:col-span-5">
+            <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-mel">
+              05 · agendamento
+            </div>
+            <h2 className="mt-4 font-display text-h2 text-creme text-balance max-w-[18ch]">
+              Marque o banho. <em className="italic text-mel">A gente cuida do resto.</em>
+            </h2>
+            <p className="mt-5 font-sans text-[16px] text-creme/80 max-w-[42ch]">
+              Três passos. Dois minutos. Sem download.
+            </p>
+            <Link href="/agendar" className="btn-primary mt-8">
+              Começar agendamento
+              <svg width="14" height="12" viewBox="0 0 14 12" aria-hidden>
+                <path d="M1 6h11M8 1l4 5-4 5" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </Link>
 
-        <ol className="col-span-12 md:col-span-6 md:col-start-7 grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {STEPS.map((s) => (
-            <li
-              key={s.n}
-              className="relative aspect-square bg-noite/40 border border-osso/15 corner-chamfer-sm p-5 flex flex-col justify-between"
-            >
-              <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-mate">{s.n}</span>
-              <div>
-                <h3 className="font-display text-[22px] leading-tight text-osso">{s.t}</h3>
-                <p className="mt-2 font-sans text-[13px] text-osso/70">{s.d}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
+            <div className="mt-8 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.14em] text-creme/55">
+              <span>ou</span>
+              <a href={`https://wa.me/${BRAND.phoneDigits}`} target="_blank" rel="noreferrer" className="accent-wave text-creme/85">
+                chame no WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <ol className="col-span-12 md:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+            {STEPS.map((s, i) => (
+              <li
+                key={s.n}
+                className="relative rounded-soft bg-tinta/40 backdrop-blur border border-creme/15 p-5 flex flex-col gap-6 min-h-[180px] transition-colors hover:border-mel/60"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-mel">
+                    {s.n}
+                  </span>
+                  <span className="h-6 w-6 inline-flex items-center justify-center rounded-full bg-mel/20 text-mel font-mono text-[11px]">
+                    {i + 1}
+                  </span>
+                </div>
+                <div>
+                  <h3 className="font-display text-[20px] leading-tight text-creme">{s.t}</h3>
+                  <p className="mt-2 font-sans text-[13px] text-creme/70">{s.d}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
       </div>
     </section>
   );

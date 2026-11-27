@@ -1,62 +1,64 @@
 import Link from "next/link";
-import { Eyebrow } from "@/components/ui/Chip";
 import { SERVICES } from "@/content/site";
 import { brl } from "@/lib/utils";
 
 export function Services() {
   return (
-    <section id="servicos" className="py-section bg-osso">
+    <section id="servicos" className="py-section">
       <div className="container">
-        <div className="grid grid-cols-12 gap-6 items-end">
-          <div className="col-span-12 md:col-span-7">
-            <Eyebrow>O que a gente faz</Eyebrow>
-            <h2 className="mt-4 font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.98] tracking-[-0.025em] text-carvao text-balance">
-              Três serviços. <em className="italic text-terracota">Uma só tarde.</em>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+          <div>
+            <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-tijolo">
+              02 · serviços
+            </div>
+            <h2 className="mt-4 font-display text-h2 text-tinta text-balance max-w-[16ch]">
+              Três coisas boas no mesmo quintal.
             </h2>
           </div>
-          <p className="col-span-12 md:col-span-4 md:col-start-9 font-sans text-[15px] text-carvao/70">
-            Faz os três no mesmo dia. Ou só um. Ou só fica.
+          <p className="font-sans text-[15px] text-tinta/65 max-w-[36ch]">
+            Pode fazer os três no mesmo dia. Ou só um. Ou só ficar.
           </p>
         </div>
 
-        <ul className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6">
+        <ul className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
           {SERVICES.map((s) => (
-            <li key={s.slug} className="group">
-              <article className="relative bg-osso corner-chamfer border border-carvao/10 transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-[0_24px_48px_-24px_rgba(221,107,60,0.4)]">
-                <div className="relative aspect-square overflow-hidden warm-filter film-grain -ml-5 mt-5 mr-5 border border-carvao/10 corner-chamfer-sm bg-clorofila/15">
+            <li key={s.slug}>
+              <Link
+                href={`/servicos/${s.slug}`}
+                className="group block overflow-hidden rounded-soft bg-creme2/60 border border-tinta/10 transition-all duration-300 hover:-translate-y-1 hover:border-tijolo/50 hover:shadow-card"
+              >
+                <div className="relative aspect-[4/5] overflow-hidden warm-filter">
                   <div
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                    className="bg-img absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                     style={{ backgroundImage: `url(${s.img})` }}
                     aria-hidden
                   />
-                </div>
-
-                <div className="relative p-8 pb-10">
-                  <span
+                  <div
                     aria-hidden
-                    className="pointer-events-none absolute right-5 top-2 font-display text-[clamp(90px,10vw,160px)] leading-none text-terracota/15 transition-opacity duration-500 group-hover:text-terracota/35"
-                  >
+                    className="absolute inset-0"
+                    style={{ background: "linear-gradient(180deg, transparent 50%, rgba(20,18,16,0.7) 100%)" }}
+                  />
+                  <span className="absolute top-4 left-4 inline-flex items-center justify-center h-7 min-w-7 px-2 rounded-full bg-creme/95 text-tinta font-mono text-[11px]">
                     {s.n}
                   </span>
-                  <h3 className="relative font-display text-[32px] leading-none text-carvao">{s.title}</h3>
-                  <p className="mt-5 font-sans text-[15px] leading-[1.55] text-carvao/75">{s.support}</p>
-
-                  <div className="mt-8 flex items-end justify-between">
-                    <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-carvao/60">
-                      {s.fromCents > 0 ? `a partir de ${brl(s.fromCents)}` : "cortesia"}
-                    </span>
-                    <Link
-                      href={`/servicos/${s.slug}`}
-                      className="font-sans text-[13px] text-carvao transition-all hover:text-terracota inline-flex items-center gap-1.5"
-                    >
-                      Saiba mais
-                      <svg width="12" height="10" viewBox="0 0 12 10" className="transition-transform group-hover:translate-x-1" aria-hidden>
-                        <path d="M1 5h9M7 1l4 4-4 4" stroke="currentColor" strokeWidth="1.3" fill="none" strokeLinecap="round"/>
-                      </svg>
-                    </Link>
+                  <div className="absolute bottom-4 left-4 right-4 text-creme">
+                    <h3 className="font-display text-[26px] leading-none">{s.title}</h3>
+                    <p className="mt-2 font-sans text-[13px] text-creme/85 leading-snug">{s.support}</p>
                   </div>
                 </div>
-              </article>
+
+                <div className="flex items-center justify-between px-5 py-4 bg-creme">
+                  <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-tinta/60">
+                    {s.fromCents > 0 ? `a partir de ${brl(s.fromCents)}` : "cortesia"}
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 font-sans text-[13px] text-tijolo">
+                    detalhes
+                    <svg width="12" height="10" viewBox="0 0 12 10" className="transition-transform group-hover:translate-x-1" aria-hidden>
+                      <path d="M1 5h9M7 1l4 4-4 4" stroke="currentColor" strokeWidth="1.4" fill="none" strokeLinecap="round"/>
+                    </svg>
+                  </span>
+                </div>
+              </Link>
             </li>
           ))}
         </ul>

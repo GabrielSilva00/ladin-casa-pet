@@ -10,10 +10,10 @@ export function Chip({
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-full border px-3 py-1 font-mono text-[11px] uppercase tracking-wider2",
+        "inline-flex items-center rounded-full border px-3 py-1 font-mono text-[11px] uppercase tracking-[0.14em]",
         active
-          ? "border-terracota bg-terracota text-osso"
-          : "border-terracota/60 text-carvao bg-transparent",
+          ? "border-tijolo bg-tijolo text-creme"
+          : "border-tinta/25 text-tinta bg-transparent",
         className
       )}
       {...props}
@@ -27,11 +27,11 @@ export function Eyebrow({ children, className }: { children: React.ReactNode; cl
   return (
     <span
       className={cn(
-        "inline-block font-mono text-[11px] uppercase tracking-wider2 text-terracota",
+        "inline-block font-mono text-[11px] uppercase tracking-[0.14em] text-tijolo",
         className
       )}
     >
-      ({children})
+      {children}
     </span>
   );
 }

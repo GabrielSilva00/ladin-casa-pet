@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { fraunces, inter, jetbrains } from "@/lib/fonts";
 import { SmoothScroll, ScrollProgress } from "@/components/smooth/SmoothScroll";
+import { FloatingCta } from "@/components/ui/FloatingCta";
 import { Toaster } from "sonner";
 import "@/styles/globals.css";
 
@@ -29,18 +30,19 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" className={`${fraunces.variable} ${inter.variable} ${jetbrains.variable}`}>
-      <body className="bg-osso text-carvao antialiased">
+      <body className="bg-creme text-tinta antialiased">
         <SmoothScroll />
         <ScrollProgress />
         {children}
+        <FloatingCta />
         <Toaster
           position="bottom-center"
           toastOptions={{
             style: {
-              background: "#1A1512",
-              color: "#F4EDE0",
-              border: "1px solid #B8502E",
-              borderRadius: "4px",
+              background: "#141210",
+              color: "#F3EAD4",
+              border: "1px solid #B24626",
+              borderRadius: "999px",
               fontFamily: "var(--font-sans)"
             }
           }}

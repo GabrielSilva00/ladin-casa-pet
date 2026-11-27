@@ -22,8 +22,9 @@ export type GestaoBooking = {
 };
 
 const KEY = "cabana.gestao.v1";
+const EVT = "cabana:gestao:update";
 
-function readAll(): GestaoBooking[] {
+export function readAllBookings(): GestaoBooking[] {
   if (typeof window === "undefined") return [];
   try {
     const raw = window.localStorage.getItem(KEY);
@@ -35,12 +36,28 @@ function readAll(): GestaoBooking[] {
   }
 }
 
-function writeAll(list: GestaoBooking[]) {
+export function writeAllBookings(list: GestaoBooking[]) {
   try {
     window.localStorage.setItem(KEY, JSON.stringify(list));
+    window.dispatchEvent(new CustomEvent(EVT));
   } catch {
     /* quota */
   }
+}
+
+function readAll() { return readAllBookings(); }
+function writeAll(list: GestaoBooking[]) { writeAllBookings(list); }
+
+// chamada síncrona (fora de hook): grava um booking novo
+export function createBooking(b: Omit<GestaoBooking, "id" | "createdAt" | "status"> & { status?: GestaoStatus }): GestaoBooking {
+  const next: GestaoBooking = {
+    ...b,
+    id: `b_${Math.random().toString(36).slice(2, 10)}`,
+    createdAt: new Date().toISOString(),
+    status: b.status ?? "aguardando"
+  };
+  writeAllBookings([next, ...readAllBookings()]);
+  return next;
 }
 
 export function useBookings() {
@@ -50,6 +67,13 @@ export function useBookings() {
   useEffect(() => {
     setBookings(readAll());
     setReady(true);
+    const onUpdate = () => setBookings(readAll());
+    window.addEventListener("cabana:gestao:update", onUpdate);
+    window.addEventListener("storage", onUpdate);
+    return () => {
+      window.removeEventListener("cabana:gestao:update", onUpdate);
+      window.removeEventListener("storage", onUpdate);
+    };
   }, []);
 
   const persist = useCallback((next: GestaoBooking[]) => {

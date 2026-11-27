@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from "react";
-import { Eyebrow } from "@/components/ui/Chip";
 import { TOUR } from "@/content/site";
 
 export function Tour() {
@@ -14,20 +13,22 @@ export function Tour() {
   };
 
   return (
-    <section id="cabana" className="py-section bg-noite text-osso">
+    <section id="cabana" className="py-section bg-tinta text-creme">
       <div className="container">
-        <div className="grid grid-cols-12 gap-6 items-end">
-          <div className="col-span-12 md:col-span-6">
-            <Eyebrow className="text-mate">O lugar</Eyebrow>
-            <h2 className="mt-4 font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.98] tracking-[-0.025em] text-osso text-balance">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div>
+            <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-mel">
+              03 · o lugar
+            </div>
+            <h2 className="mt-4 font-display text-h2 text-creme text-balance max-w-[14ch]">
               Entre, <em className="italic">fique</em>, respire.
             </h2>
           </div>
-          <div className="col-span-12 md:col-span-4 md:col-start-9 flex justify-end gap-2">
+          <div className="flex gap-2">
             <button
               type="button"
               onClick={() => scrollBy(-1)}
-              className="h-11 w-11 rounded-full border border-osso/40 text-osso transition-all hover:bg-terracota hover:border-terracota active:scale-95"
+              className="h-10 w-10 rounded-full border border-creme/40 text-creme transition-all hover:bg-tijolo hover:border-tijolo"
               aria-label="Anterior"
             >
               ←
@@ -35,7 +36,7 @@ export function Tour() {
             <button
               type="button"
               onClick={() => scrollBy(1)}
-              className="h-11 w-11 rounded-full border border-osso/40 text-osso transition-all hover:bg-terracota hover:border-terracota active:scale-95"
+              className="h-10 w-10 rounded-full border border-creme/40 text-creme transition-all hover:bg-tijolo hover:border-tijolo"
               aria-label="Próximo"
             >
               →
@@ -46,26 +47,26 @@ export function Tour() {
 
       <div
         ref={scroller}
-        className="mt-14 flex gap-6 overflow-x-auto scroll-snap-x pb-6 pl-[max(1.25rem,calc((100vw-1360px)/2+1.25rem))] pr-5"
+        className="mt-12 flex gap-5 overflow-x-auto scroll-snap-x pb-6 pl-[max(1.25rem,calc((100vw-1280px)/2+1.25rem))] pr-5"
         style={{ scrollbarWidth: "none" }}
       >
         {TOUR.map((item, i) => (
           <figure
             key={item.src}
-            className="shrink-0 w-[min(80vw,520px)]"
+            className="shrink-0 w-[min(78vw,420px)]"
             style={{ aspectRatio: item.ratio }}
           >
-            <div className="relative h-full w-full overflow-hidden corner-chamfer-sm bg-clorofila/20 warm-filter film-grain">
+            <div className="relative h-full w-full overflow-hidden rounded-soft bg-musgo/20 warm-filter">
               <div
-                className="absolute inset-0 bg-cover bg-center"
+                className="bg-img absolute inset-0 bg-cover bg-center"
                 style={{ backgroundImage: `url(${item.src})` }}
                 aria-hidden
               />
-              <span className="absolute top-4 right-4 font-mono text-[10px] uppercase tracking-[0.14em] text-osso/80">
+              <span className="absolute top-3 left-3 inline-flex items-center h-6 px-2 rounded-full bg-tinta/70 backdrop-blur font-mono text-[10px] uppercase tracking-[0.14em] text-creme/90">
                 {String(i + 1).padStart(2, "0")} / {String(TOUR.length).padStart(2, "0")}
               </span>
             </div>
-            <figcaption className="mt-3 pl-3 border-l-2 border-terracota font-mono text-[11px] uppercase tracking-[0.14em] text-osso/70">
+            <figcaption className="mt-3 pl-3 border-l-2 border-tijolo font-sans text-[13px] text-creme/80">
               {item.caption}
             </figcaption>
           </figure>

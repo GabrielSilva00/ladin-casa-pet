@@ -1,48 +1,56 @@
-import { Eyebrow } from "@/components/ui/Chip";
 import { TESTIMONIALS } from "@/content/site";
 
 export function Testimonials() {
   return (
-    <section className="py-section">
+    <section className="py-section bg-creme2/50">
       <div className="container">
-        <div className="grid grid-cols-12 gap-6">
-          <div className="col-span-12 md:col-span-6">
-            <Eyebrow>Palavra de quem já foi</Eyebrow>
-            <h2 className="mt-4 font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.98] tracking-[-0.025em] text-carvao text-balance">
-              Três tutores, <em className="italic text-terracota">três sábados.</em>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+          <div>
+            <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-tijolo">
+              06 · quem já foi
+            </div>
+            <h2 className="mt-4 font-display text-h2 text-tinta text-balance max-w-[16ch]">
+              O que os tutores dizem.
             </h2>
           </div>
+          <a
+            href="https://www.google.com/maps/place/Cabana+Pet+Caf%C3%A9"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-tinta/70 hover:text-tijolo"
+          >
+            <span className="text-mel">★★★★★</span> 5,0 no Google · 242 avaliações
+          </a>
         </div>
 
-        <ul className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
-          {TESTIMONIALS.map((t, i) => (
+        <ul className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {TESTIMONIALS.map((t) => (
             <li
               key={t.author}
-              className="relative paper-texture p-8 md:p-10 border border-carvao/10 corner-chamfer-sm"
-              style={{ transform: `rotate(${t.rotate})`, boxShadow: "0 12px 32px -20px rgba(15,14,12,0.25)" }}
+              className="relative rounded-soft bg-creme border border-tinta/10 p-7 flex flex-col"
             >
-              <p className="font-display text-[clamp(22px,2vw,28px)] leading-[1.35] text-carvao">
-                “{t.text}”
-              </p>
-
-              <svg viewBox="0 0 220 60" className="mt-8 h-12 w-auto text-carvao" aria-hidden>
+              <svg width="28" height="22" viewBox="0 0 28 22" aria-hidden className="mb-4 text-tijolo/70">
                 <path
-                  d={
-                    i === 0
-                      ? "M5 42 C 25 18, 45 50, 70 28 S 120 50, 150 24 S 200 48, 215 30"
-                      : i === 1
-                      ? "M5 36 C 30 10, 55 55, 85 30 S 130 12, 160 38 S 205 10, 215 32"
-                      : "M5 40 C 20 20, 50 46, 80 24 S 135 48, 165 20 S 200 46, 215 28"
-                  }
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
+                  fill="currentColor"
+                  d="M0 22V12.5C0 5.5 4 1 11 0v4c-3 1-5 3.5-5 7h5v11H0zm17 0V12.5C17 5.5 21 1 28 0v4c-3 1-5 3.5-5 7h5v11H17z"
                 />
               </svg>
+              <p className="font-display text-[19px] leading-[1.45] text-tinta flex-1">
+                {t.text}
+              </p>
 
-              <div className="mt-4 font-mono text-[11px] uppercase tracking-[0.14em] text-carvao/60">
-                {t.author} · {t.neighborhood}
+              <div className="mt-6 pt-5 border-t border-tinta/10 flex items-center gap-3">
+                <div
+                  className="h-11 w-11 rounded-full flex items-center justify-center font-mono text-[13px] font-medium text-creme shrink-0"
+                  style={{ background: t.color }}
+                  aria-hidden
+                >
+                  {t.initials}
+                </div>
+                <div>
+                  <div className="font-sans text-[14px] font-medium text-tinta">{t.author}</div>
+                  <div className="font-mono text-[11px] text-tinta/55">no Google · {t.when}</div>
+                </div>
               </div>
             </li>
           ))}

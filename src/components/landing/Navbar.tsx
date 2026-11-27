@@ -21,21 +21,31 @@ export function Navbar() {
     <header
       className={cn(
         "fixed top-0 inset-x-0 z-50 transition-all duration-500",
-        scrolled ? "py-3" : "py-6"
+        scrolled ? "py-3" : "py-5"
       )}
     >
-      <div className="container flex items-center justify-between gap-6">
-        <Link href="/" aria-label="Cabana Pet Café" className="block">
+      <div
+        className={cn(
+          "container flex items-center justify-between gap-6 transition-all duration-500",
+          scrolled && "md:bg-creme/90 md:backdrop-blur md:rounded-full md:border md:border-tinta/10 md:px-4 md:py-2"
+        )}
+      >
+        <Link href="/" aria-label="Cabana Pet Café" className={cn("block transition-colors", scrolled ? "text-tinta" : "text-creme")}>
           <Wordmark />
         </Link>
 
-        <nav className={cn("hidden md:block", scrolled && "opacity-0 pointer-events-none")}>
-          <ul className="flex items-center gap-1 rounded-full border border-terracota/70 bg-osso/80 backdrop-blur px-2 py-1.5">
+        <nav className="hidden md:block">
+          <ul className="flex items-center gap-1">
             {NAV.map((item) => (
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="rounded-full px-4 py-1.5 font-sans text-[13px] text-carvao transition-colors hover:bg-terracota hover:text-osso"
+                  className={cn(
+                    "rounded-full px-3.5 py-1.5 font-sans text-[13px] transition-colors",
+                    scrolled
+                      ? "text-tinta/70 hover:text-tijolo"
+                      : "text-creme/80 hover:text-mel"
+                  )}
                 >
                   {item.label}
                 </a>
@@ -46,20 +56,20 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <Link
-            href="/gestao"
-            className="hidden lg:inline font-mono text-[11px] uppercase tracking-[0.14em] text-carvao/55 hover:text-terracota"
-          >
-            Painel
-          </Link>
-          <Link
             href="/agendar"
-            className="inline-flex items-center gap-2 rounded-btn bg-terracota px-5 py-2.5 font-sans text-[13px] font-medium text-osso transition-all hover:shadow-warm hover:-translate-y-[1px]"
+            className="hidden md:inline-flex items-center gap-2 rounded-full bg-tijolo px-4 py-2 font-sans text-[13px] font-medium text-creme transition-all hover:bg-tijolo2 hover:-translate-y-[1px]"
           >
-            Agendar <span aria-hidden>→</span>
+            Agendar
+            <svg width="12" height="10" viewBox="0 0 12 10" aria-hidden>
+              <path d="M1 5h9M7 1l4 4-4 4" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+            </svg>
           </Link>
           <button
             type="button"
-            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-carvao/20 text-carvao"
+            className={cn(
+              "md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border transition-colors",
+              scrolled ? "border-tinta/25 text-tinta bg-creme" : "border-creme/40 text-creme"
+            )}
             onClick={() => setOpen((v) => !v)}
             aria-label="Menu"
             aria-expanded={open}
@@ -74,19 +84,28 @@ export function Navbar() {
       </div>
 
       {open ? (
-        <div className="md:hidden container mt-4 rounded-2xl border border-carvao/15 bg-osso p-4 shadow-card">
-          <ul className="flex flex-col divide-y divide-carvao/10">
+        <div className="md:hidden container mt-3 rounded-soft border border-tinta/15 bg-creme p-4 shadow-card">
+          <ul className="flex flex-col divide-y divide-tinta/10">
             {NAV.map((item) => (
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="block py-3 font-display text-[22px] text-carvao"
+                  className="block py-3 font-display text-[22px] text-tinta"
                   onClick={() => setOpen(false)}
                 >
                   {item.label}
                 </a>
               </li>
             ))}
+            <li>
+              <Link
+                href="/agendar"
+                className="block py-3 font-display text-[22px] text-tijolo"
+                onClick={() => setOpen(false)}
+              >
+                Agendar →
+              </Link>
+            </li>
           </ul>
         </div>
       ) : null}

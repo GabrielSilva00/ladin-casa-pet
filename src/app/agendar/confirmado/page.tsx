@@ -4,75 +4,45 @@ import { Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/Button";
-import { Eyebrow } from "@/components/ui/Chip";
-import { BRAND } from "@/lib/utils";
 
 function Content() {
   const params = useSearchParams();
-  const modo = params.get("modo");
-  const isWhatsapp = modo === "whatsapp";
+  const id = params.get("id");
 
   return (
-    <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-6">
-      <Eyebrow>{isWhatsapp ? "Quase lá" : "Pronto"}</Eyebrow>
-      <h1 className="mt-4 font-display text-h1 text-carvao text-balance max-w-[20ch]">
-        {isWhatsapp ? (
-          <>
-            Toque{" "}
-            <em className="italic text-terracota">
-              enviar
-            </em>{" "}
-            no WhatsApp pra concluir.
-          </>
-        ) : (
-          <>
-            Seu horário está{" "}
-            <em className="italic text-terracota">
-              guardado.
-            </em>
-          </>
-        )}
+    <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-6 py-14">
+      <div className="h-16 w-16 rounded-full bg-tijolo/15 border border-tijolo/30 flex items-center justify-center mb-6 animate-floatIn">
+        <svg width="28" height="22" viewBox="0 0 28 22" aria-hidden className="text-tijolo">
+          <path d="M1 11l8 8L27 2" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </div>
+      <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-tijolo">
+        Agendamento feito
+      </div>
+      <h1 className="mt-3 font-display text-h1 text-tinta text-balance max-w-[20ch]">
+        Seu horário está <em className="italic text-tijolo">guardado.</em>
       </h1>
 
-      <p className="mt-6 max-w-[52ch] font-sans text-[17px] text-carvao/75">
-        {isWhatsapp ? (
-          <>
-            Abrimos o WhatsApp numa nova aba com todos os dados do agendamento
-            prontos. É só tocar <strong>enviar</strong>. A gente confirma o
-            horário por mensagem em instantes.
-          </>
-        ) : (
-          <>
-            Enviamos a confirmação pelo WhatsApp. Se precisar remarcar, é só
-            responder a mensagem. A gente dá um jeito.
-          </>
-        )}
+      <p className="mt-5 max-w-[52ch] font-sans text-[16px] text-tinta/75">
+        O agendamento já está no painel da casa. A gente te confirma pelo WhatsApp em instantes.
       </p>
 
-      {isWhatsapp ? (
-        <p className="mt-4 font-mono text-[11px] uppercase tracking-wider2 text-carvao/55">
-          Não abriu a aba?{" "}
-          <a
-            href={`https://wa.me/${BRAND.phoneDigits}`}
-            target="_blank"
-            rel="noreferrer"
-            className="underline-wavy"
-          >
-            abra o WhatsApp aqui
-          </a>
-        </p>
+      {id ? (
+        <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-tinta/5 border border-tinta/10 px-4 py-2 font-mono text-[11px] uppercase tracking-[0.14em] text-tinta/60">
+          Protocolo <span className="text-tinta font-numeric">{id}</span>
+        </div>
       ) : null}
 
-      <div className="mt-10 flex flex-wrap items-center gap-4 justify-center">
+      <div className="mt-10 flex flex-wrap items-center gap-3 justify-center">
         <Link href="/">
           <Button>Voltar para o começo</Button>
         </Link>
-        <Link href="/cardapio" className="font-sans text-[15px] text-carvao underline-wavy">
-          Enquanto isso, veja o cardápio
+        <Link href="/gestao" className="btn-ghost">
+          Ver no painel
         </Link>
       </div>
 
-      <div className="mt-16 font-mono text-[11px] uppercase tracking-wider2 text-carvao/50">
+      <div className="mt-14 font-mono text-[11px] uppercase tracking-[0.14em] text-tinta/50">
         Até lá. O café já está moído.
       </div>
     </div>
