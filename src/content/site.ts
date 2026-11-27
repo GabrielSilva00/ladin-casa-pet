@@ -81,20 +81,20 @@ export const TESTIMONIALS = [
     author: "Nathalia P. Cristovão",
     initials: "NC",
     when: "há 2 meses",
-    color: "#B24626"
+    color: "#A94A2A"
   },
   {
     text: "Enquanto seu pet toma banho você toma um cafezinho super gostoso. Dá pra acompanhar o banho porque a parte é de vidro.",
     author: "Izabelle L. S. Ribeiro",
     initials: "IR",
     when: "há 1 ano",
-    color: "#394A33"
+    color: "#2E3A2B"
   },
   {
     text: "Lugar de gramado, seguro, aconchegante. Nunca vi minhas pets tão felizes para um banho. Sem medo, sem tremor.",
     author: "Neusa L. Dunder",
     initials: "ND",
     when: "há 1 ano",
-    color: "#E0A935"
+    color: "#141210"
   }
 ] as const;

@@ -6,9 +6,7 @@ export function Testimonials() {
       <div className="container">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
           <div>
-            <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-tijolo">
-              06 · quem já foi
-            </div>
+            <span className="section-eyebrow">Quem já foi</span>
             <h2 className="mt-4 font-display text-h2 text-tinta text-balance max-w-[16ch]">
               O que os tutores dizem.
             </h2>

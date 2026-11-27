@@ -5,9 +5,7 @@ export function Visit() {
     <section id="visitar" className="py-section">
       <div className="container">
         <div className="mb-12">
-          <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-tijolo">
-            07 · visitar
-          </div>
+          <span className="section-eyebrow">Visitar</span>
           <h2 className="mt-4 font-display text-h2 text-tinta text-balance max-w-[16ch]">
             {BRAND.neighborhood}, {BRAND.city}. <em className="italic">Entre pela cancela.</em>
           </h2>

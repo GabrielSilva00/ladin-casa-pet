@@ -57,7 +57,8 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <Link
             href="/agendar"
-            className="hidden md:inline-flex items-center gap-2 rounded-full bg-tijolo px-4 py-2 font-sans text-[13px] font-medium text-creme transition-all hover:bg-tijolo2 hover:-translate-y-[1px]"
+            className="hidden md:inline-flex items-center gap-2 rounded-full bg-baunilha px-4 py-2 font-sans text-[13px] font-medium text-tinta transition-all hover:bg-terra hover:text-baunilha hover:-translate-y-[1px] border border-baunilha/0 data-[scrolled=true]:bg-tinta data-[scrolled=true]:text-baunilha"
+            data-scrolled={scrolled ? "true" : "false"}
           >
             Agendar
             <svg width="12" height="10" viewBox="0 0 12 10" aria-hidden>

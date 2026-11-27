@@ -8,9 +8,7 @@ export function Services() {
       <div className="container">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
           <div>
-            <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-tijolo">
-              02 · serviços
-            </div>
+            <span className="section-eyebrow">Serviços</span>
             <h2 className="mt-4 font-display text-h2 text-tinta text-balance max-w-[16ch]">
               Três coisas boas no mesmo quintal.
             </h2>

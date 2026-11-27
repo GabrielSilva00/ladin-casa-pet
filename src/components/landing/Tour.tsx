@@ -17,9 +17,7 @@ export function Tour() {
       <div className="container">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
-            <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-mel">
-              03 · o lugar
-            </div>
+            <span className="section-eyebrow on-dark">O lugar</span>
             <h2 className="mt-4 font-display text-h2 text-creme text-balance max-w-[14ch]">
               Entre, <em className="italic">fique</em>, respire.
             </h2>

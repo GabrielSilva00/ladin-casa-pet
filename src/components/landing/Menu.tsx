@@ -8,9 +8,7 @@ export function Menu() {
       <div className="container">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-tijolo">
-              04 · do café à cozinha
-            </div>
+            <span className="section-eyebrow">Do café à cozinha</span>
             <h2 className="mt-4 font-display text-h2 text-tinta text-balance max-w-[18ch]">
               Curto, sazonal, <em className="italic">fresco todo dia.</em>
             </h2>

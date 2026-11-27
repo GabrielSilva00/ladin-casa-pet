@@ -4,10 +4,8 @@ export function Manifesto() {
       <div className="container">
         <div className="grid grid-cols-12 gap-6 items-start">
           <div className="col-span-12 md:col-span-4">
-            <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-tijolo">
-              01 · a cabana
-            </div>
-            <h2 className="mt-5 font-display text-h2 text-tinta text-balance">
+            <span className="section-eyebrow">A cabana</span>
+            <h2 className="mt-4 font-display text-h2 text-tinta text-balance">
               Não é pet shop. <em className="italic">É um pedaço de lugar.</em>
             </h2>
           </div>

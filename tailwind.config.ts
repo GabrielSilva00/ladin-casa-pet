@@ -11,31 +11,34 @@ const config: Config = {
     },
     extend: {
       colors: {
-        /* ===== NOVA PALETA ===== */
-        baunilha: "#FFF7E6",   // bg principal: branco-baunilha quente e vivo
-        creme:    "#FFF7E6",   // alias (igual a baunilha, vivo)
-        creme2:   "#F5E7CC",   // card bg sobre baunilha (amarelo-areia)
-        tinta:    "#0D0D10",   // texto / dark: preto quase-puro
-        coral:    "#FF4F3C",   // acento 1: coral quente vibrante (não tijolo)
-        coral2:   "#D13828",   // coral escuro (hover/estado)
-        limao:    "#C9EC3B",   // acento 2: verde-limão elétrico (chartreuse)
-        limao2:   "#A7CA1F",   // limão escuro
-        oceano:   "#174A7A",   // acento 3: azul-oceano profundo
-        rosa:     "#F7B8A5",   // acento 4: rosa-pêssego suave
-        musgo:    "#2A5234",   // verde-musgo profundo (mais escuro, menos oliva)
-        tijolo:   "#FF4F3C",   // alias → coral
-        tijolo2:  "#D13828",   // alias → coral2
-        /* ===== ALIASES LEGADOS (apontam para a nova paleta) ===== */
-        osso:      "#FFF7E6",  // → baunilha
-        carvao:    "#0D0D10",  // → tinta
-        terracota: "#FF4F3C",  // → coral
-        clorofila: "#2A5234",  // → musgo
-        noite:     "#0D0D10",  // → tinta
-        mate:      "#C9EC3B",  // → limao
-        mel:       "#C9EC3B",  // → limao
-        tamara:    "#F7B8A5",  // → rosa
-        vinho:     "#B13020",  // vermelho bordô profundo
-        cafe:      "#174A7A"   // → oceano
+        /* ===== PALETA REDUZIDA (3 cores + 1 verde ocasional) ===== */
+        baunilha: "#F7F2E8",   // bg principal: creme neutro, menos amarelo
+        baunilha2: "#EEE7D6",  // bg card: creme + 1 tom
+        tinta:    "#141210",   // texto / dark
+        terra:    "#A94A2A",   // acento único: terracota profundo, muted
+        terra2:   "#813620",   // terra escuro (hover)
+        musgo:    "#2E3A2B",   // verde escuro — só em 1 section
+
+        /* ===== ALIASES (tudo aponta pra paleta reduzida) ===== */
+        creme:     "#F7F2E8",  // → baunilha
+        creme2:    "#EEE7D6",  // → baunilha2
+        osso:      "#F7F2E8",  // → baunilha
+        carvao:    "#141210",  // → tinta
+        noite:     "#141210",  // → tinta
+        clorofila: "#2E3A2B",  // → musgo
+        terracota: "#A94A2A",  // → terra
+        tijolo:    "#A94A2A",  // → terra
+        tijolo2:   "#813620",  // → terra2
+        coral:     "#A94A2A",  // → terra (sem mais coral vibrante)
+        coral2:    "#813620",  // → terra2
+        limao:     "#141210",  // → tinta (sem mais chartreuse)
+        mel:       "#A94A2A",  // → terra
+        mate:      "#A94A2A",  // → terra
+        oceano:    "#2E3A2B",  // → musgo
+        rosa:      "#EEE7D6",  // → baunilha2
+        tamara:    "#EEE7D6",  // → baunilha2
+        vinho:     "#813620",  // → terra2
+        cafe:      "#141210"   // → tinta
       },
       fontFamily: {
         display: ["var(--font-display)", "system-ui", "sans-serif"],
@@ -64,9 +67,9 @@ const config: Config = {
         soft: "18px"
       },
       boxShadow: {
-        warm: "0 18px 40px -22px rgba(255, 79, 60, 0.6)",
-        card: "0 10px 30px -18px rgba(13, 13, 16, 0.35)",
-        float: "0 20px 50px -20px rgba(13, 13, 16, 0.5)"
+        warm: "0 18px 40px -22px rgba(169, 74, 42, 0.5)",
+        card: "0 10px 30px -18px rgba(20, 18, 16, 0.3)",
+        float: "0 20px 50px -20px rgba(20, 18, 16, 0.4)"
       },
       backgroundImage: {
         grain: "url('/textures/grain.svg')",

@@ -21,11 +21,9 @@ export function BookingPreview() {
       <div className="container relative">
         <div className="grid grid-cols-12 gap-8 md:gap-12 items-start">
           <div className="col-span-12 md:col-span-5">
-            <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-mel">
-              05 · agendamento
-            </div>
+            <span className="section-eyebrow on-dark">Agendamento</span>
             <h2 className="mt-4 font-display text-h2 text-creme text-balance max-w-[18ch]">
-              Marque o banho. <em className="italic text-mel">A gente cuida do resto.</em>
+              Marque o banho. <em className="italic text-baunilha">A gente cuida do resto.</em>
             </h2>
             <p className="mt-5 font-sans text-[16px] text-creme/80 max-w-[42ch]">
               Três passos. Dois minutos. Sem download.
