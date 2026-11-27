@@ -18,7 +18,7 @@ export function Tour() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
             <span className="section-eyebrow on-dark">O lugar</span>
-            <h2 className="mt-4 font-display text-h2 text-creme text-balance max-w-[14ch]">
+            <h2 className="mt-4 font-display text-h2 text-creme whitespace-nowrap">
               Entre, <em className="italic">fique</em>, respire.
             </h2>
           </div>
@@ -51,8 +51,7 @@ export function Tour() {
         {TOUR.map((item, i) => (
           <figure
             key={item.src}
-            className="shrink-0 w-[min(78vw,420px)]"
-            style={{ aspectRatio: item.ratio }}
+            className="shrink-0 w-[min(78vw,420px)] aspect-[3/4]"
           >
             <div className="relative h-full w-full overflow-hidden rounded-soft bg-musgo/20 warm-filter">
               <div
