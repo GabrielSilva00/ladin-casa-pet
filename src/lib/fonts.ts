@@ -1,20 +1,23 @@
-import { Fraunces, Figtree, IBM_Plex_Mono } from "next/font/google";
+import { Unbounded, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 
-export const fraunces = Fraunces({
+/* Display: Unbounded — geométrica, com personalidade. Nada a ver com serifa IA-padrão. */
+export const fraunces = Unbounded({
   subsets: ["latin"],
   variable: "--font-display",
-  style: ["normal", "italic"],
-  axes: ["opsz", "SOFT", "WONK"],
+  weight: ["300", "400", "500", "600", "700", "800"],
   display: "swap"
 });
 
-export const inter = Figtree({
+/* Sans / body: Hanken Grotesk — humanista, moderna, clara. */
+export const inter = Hanken_Grotesk({
   subsets: ["latin"],
   variable: "--font-sans",
+  weight: ["400", "500", "600", "700"],
   display: "swap"
 });
 
-export const jetbrains = IBM_Plex_Mono({
+/* Mono */
+export const jetbrains = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
   weight: ["400", "500"],

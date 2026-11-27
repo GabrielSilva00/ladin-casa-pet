@@ -11,42 +11,48 @@ const config: Config = {
     },
     extend: {
       colors: {
-        tinta: "#141210",       // quase-preto quente (texto, dark bg)
-        creme: "#F3EAD4",       // papel cru (bg principal)
-        creme2: "#E9DCC0",      // papel + um tom (cards sobre creme)
-        tijolo: "#B24626",      // laranja-tijolo (ação principal)
-        tijolo2: "#962F18",     // tijolo escuro (hover/estado)
-        musgo: "#394A33",       // verde-musgo profundo
-        musgo2: "#2A3825",      // musgo noite
-        mel: "#E0A935",         // mel/mostarda
-        rosa: "#D89378",        // rosa queimado
-        cafe: "#4A2F21",        // café moído
-        /* compat: mantém nomes antigos como alias enquanto lemos os arquivos */
-        osso: "#F3EAD4",
-        carvao: "#141210",
-        terracota: "#B24626",
-        clorofila: "#394A33",
-        noite: "#141210",
-        mate: "#E0A935",
-        tamara: "#D89378",
-        vinho: "#962F18"
+        /* ===== NOVA PALETA ===== */
+        baunilha: "#FFF7E6",   // bg principal: branco-baunilha quente e vivo
+        creme:    "#FFF7E6",   // alias (igual a baunilha, vivo)
+        creme2:   "#F5E7CC",   // card bg sobre baunilha (amarelo-areia)
+        tinta:    "#0D0D10",   // texto / dark: preto quase-puro
+        coral:    "#FF4F3C",   // acento 1: coral quente vibrante (não tijolo)
+        coral2:   "#D13828",   // coral escuro (hover/estado)
+        limao:    "#C9EC3B",   // acento 2: verde-limão elétrico (chartreuse)
+        limao2:   "#A7CA1F",   // limão escuro
+        oceano:   "#174A7A",   // acento 3: azul-oceano profundo
+        rosa:     "#F7B8A5",   // acento 4: rosa-pêssego suave
+        musgo:    "#2A5234",   // verde-musgo profundo (mais escuro, menos oliva)
+        tijolo:   "#FF4F3C",   // alias → coral
+        tijolo2:  "#D13828",   // alias → coral2
+        /* ===== ALIASES LEGADOS (apontam para a nova paleta) ===== */
+        osso:      "#FFF7E6",  // → baunilha
+        carvao:    "#0D0D10",  // → tinta
+        terracota: "#FF4F3C",  // → coral
+        clorofila: "#2A5234",  // → musgo
+        noite:     "#0D0D10",  // → tinta
+        mate:      "#C9EC3B",  // → limao
+        mel:       "#C9EC3B",  // → limao
+        tamara:    "#F7B8A5",  // → rosa
+        vinho:     "#B13020",  // vermelho bordô profundo
+        cafe:      "#174A7A"   // → oceano
       },
       fontFamily: {
-        display: ["var(--font-display)", "Georgia", "serif"],
+        display: ["var(--font-display)", "system-ui", "sans-serif"],
         sans: ["var(--font-sans)", "ui-sans-serif", "system-ui"],
         mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular"]
       },
       fontSize: {
-        mega: ["clamp(3.5rem, 9vw, 8rem)", { lineHeight: "0.92", letterSpacing: "-0.03em" }],
-        h1: ["clamp(2.25rem, 5vw, 4rem)", { lineHeight: "0.98", letterSpacing: "-0.025em" }],
-        h2: ["clamp(1.85rem, 3.5vw, 2.75rem)", { lineHeight: "1.05", letterSpacing: "-0.02em" }],
-        h3: ["clamp(1.35rem, 2vw, 1.7rem)", { lineHeight: "1.15", letterSpacing: "-0.015em" }],
+        mega: ["clamp(3.5rem, 9vw, 7.5rem)", { lineHeight: "0.9", letterSpacing: "-0.04em" }],
+        h1: ["clamp(2.25rem, 5vw, 4rem)", { lineHeight: "0.95", letterSpacing: "-0.035em" }],
+        h2: ["clamp(1.85rem, 3.5vw, 2.75rem)", { lineHeight: "1.02", letterSpacing: "-0.03em" }],
+        h3: ["clamp(1.35rem, 2vw, 1.7rem)", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
         lead: ["1.0625rem", { lineHeight: "1.6" }],
         label: ["0.6875rem", { lineHeight: "1.2", letterSpacing: "0.14em" }],
         monoish: ["0.75rem", { lineHeight: "1.3", letterSpacing: "0.04em" }]
       },
       letterSpacing: {
-        tighter2: "-0.03em",
+        tighter2: "-0.04em",
         wider2: "0.14em"
       },
       spacing: {
@@ -55,12 +61,12 @@ const config: Config = {
       },
       borderRadius: {
         btn: "999px",
-        soft: "14px"
+        soft: "18px"
       },
       boxShadow: {
-        warm: "0 18px 40px -22px rgba(178, 70, 38, 0.55)",
-        card: "0 10px 30px -18px rgba(20, 18, 16, 0.35)",
-        float: "0 20px 50px -20px rgba(20, 18, 16, 0.45)"
+        warm: "0 18px 40px -22px rgba(255, 79, 60, 0.6)",
+        card: "0 10px 30px -18px rgba(13, 13, 16, 0.35)",
+        float: "0 20px 50px -20px rgba(13, 13, 16, 0.5)"
       },
       backgroundImage: {
         grain: "url('/textures/grain.svg')",
