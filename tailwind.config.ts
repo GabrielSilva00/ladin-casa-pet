@@ -11,9 +11,9 @@ const config: Config = {
     },
     extend: {
       colors: {
-        /* ===== PALETA LAVANDA + AMARELO CLARO ===== */
-        baunilha:  "#FFF8D9",   // bg principal: amarelo bem claro
-        baunilha2: "#FDEEB0",   // bg card (amarelo um tom acima)
+        /* ===== PALETA LAVANDA + OFF-WHITE ===== */
+        baunilha:  "#F7F5FB",   // bg principal: off-white com pitada de lavanda
+        baunilha2: "#EDE9FC",   // bg card: lavanda bem pastel
         tinta:     "#2A2340",   // texto / dark: roxo-noite profundo
         lavanda:   "#8778F0",   // acento principal: lavanda média
         lavanda2:  "#6253D8",   // lavanda escura (hover)
@@ -21,9 +21,9 @@ const config: Config = {
         papel:     "#FFFFFF",   // branco puro (texto em cima do lavanda)
 
         /* ===== ALIASES LEGADOS (tudo aponta pra nova paleta) ===== */
-        creme:     "#FFF8D9",  // → baunilha
-        creme2:    "#FDEEB0",  // → baunilha2
-        osso:      "#FFF8D9",  // → baunilha
+        creme:     "#F7F5FB",  // → baunilha
+        creme2:    "#EDE9FC",  // → baunilha2
+        osso:      "#F7F5FB",  // → baunilha
         carvao:    "#2A2340",  // → tinta
         noite:     "#2A2340",  // → tinta
         clorofila: "#6253D8",  // → lavanda2 (antes era musgo verde, agora é lavanda escura)

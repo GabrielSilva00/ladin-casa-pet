@@ -2,7 +2,8 @@ export const NAV = [
   { href: "#servicos", label: "Serviços" },
   { href: "#cardapio", label: "Cardápio" },
   { href: "#cabana", label: "A Cabana" },
-  { href: "#visitar", label: "Visitar" }
+  { href: "#visitar", label: "Visitar" },
+  { href: "/gestao", label: "Gestão" }
 ] as const;
 
 export const SERVICES = [

@@ -26,11 +26,15 @@ export function Navbar() {
     >
       <div
         className={cn(
-          "container flex items-center justify-between gap-6 transition-all duration-500",
-          scrolled && "md:bg-creme/90 md:backdrop-blur md:rounded-full md:border md:border-tinta/10 md:px-4 md:py-2"
+          "container flex items-center justify-between gap-4 transition-all duration-500",
+          scrolled && "md:bg-baunilha/90 md:backdrop-blur md:rounded-full md:border md:border-tinta/10 md:px-4 md:py-2"
         )}
       >
-        <Link href="/" aria-label="Cabana Pet Café" className={cn("block transition-colors", scrolled ? "text-tinta" : "text-creme")}>
+        <Link
+          href="/"
+          aria-label="Cabana Pet Café"
+          className={cn("block transition-colors", scrolled ? "text-tinta" : "text-baunilha")}
+        >
           <Wordmark />
         </Link>
 
@@ -38,75 +42,57 @@ export function Navbar() {
           <ul className="flex items-center gap-1">
             {NAV.map((item) => (
               <li key={item.href}>
-                <a
+                <Link
                   href={item.href}
                   className={cn(
-                    "rounded-full px-3.5 py-1.5 font-sans text-[13px] transition-colors",
+                    "rounded-full px-3.5 py-1.5 font-sans text-[13px] font-semibold transition-colors",
                     scrolled
-                      ? "text-tinta/70 hover:text-tijolo"
-                      : "text-creme/80 hover:text-mel"
+                      ? "text-tinta/70 hover:text-lavanda2"
+                      : "text-baunilha/85 hover:text-lavanda3"
                   )}
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
         </nav>
 
-        <div className="flex items-center gap-3">
-          <Link
-            href="/agendar"
-            className="hidden md:inline-flex items-center gap-2 rounded-full bg-baunilha px-4 py-2 font-sans text-[13px] font-medium text-tinta transition-all hover:bg-terra hover:text-baunilha hover:-translate-y-[1px] border border-baunilha/0 data-[scrolled=true]:bg-tinta data-[scrolled=true]:text-baunilha"
-            data-scrolled={scrolled ? "true" : "false"}
-          >
-            Agendar
-            <svg width="12" height="10" viewBox="0 0 12 10" aria-hidden>
-              <path d="M1 5h9M7 1l4 4-4 4" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-            </svg>
-          </Link>
-          <button
-            type="button"
-            className={cn(
-              "md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border transition-colors",
-              scrolled ? "border-tinta/25 text-tinta bg-creme" : "border-creme/40 text-creme"
-            )}
-            onClick={() => setOpen((v) => !v)}
-            aria-label="Menu"
-            aria-expanded={open}
-          >
-            <span className="relative block h-3 w-4">
-              <span className={cn("absolute inset-x-0 top-0 h-px bg-current transition-transform", open && "translate-y-[6px] rotate-45")} />
-              <span className={cn("absolute inset-x-0 top-1/2 h-px bg-current transition-opacity", open && "opacity-0")} />
-              <span className={cn("absolute inset-x-0 bottom-0 h-px bg-current transition-transform", open && "-translate-y-[6px] -rotate-45")} />
-            </span>
-          </button>
-        </div>
+        <button
+          type="button"
+          className={cn(
+            "md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border-2 transition-colors",
+            scrolled ? "border-tinta/25 text-tinta bg-baunilha" : "border-baunilha/40 text-baunilha"
+          )}
+          onClick={() => setOpen((v) => !v)}
+          aria-label="Menu"
+          aria-expanded={open}
+        >
+          <span className="relative block h-3 w-4">
+            <span className={cn("absolute inset-x-0 top-0 h-[2px] rounded bg-current transition-transform", open && "translate-y-[6px] rotate-45")} />
+            <span className={cn("absolute inset-x-0 top-1/2 h-[2px] rounded bg-current transition-opacity", open && "opacity-0")} />
+            <span className={cn("absolute inset-x-0 bottom-0 h-[2px] rounded bg-current transition-transform", open && "-translate-y-[6px] -rotate-45")} />
+          </span>
+        </button>
       </div>
 
       {open ? (
-        <div className="md:hidden container mt-3 rounded-soft border border-tinta/15 bg-creme p-4 shadow-card">
+        <div className="md:hidden container mt-3 rounded-soft border border-tinta/15 bg-baunilha p-3 shadow-card">
           <ul className="flex flex-col divide-y divide-tinta/10">
             {NAV.map((item) => (
               <li key={item.href}>
-                <a
+                <Link
                   href={item.href}
-                  className="block py-3 font-display text-[22px] text-tinta"
+                  className="flex items-center justify-between py-3 px-2 font-display font-semibold text-[20px] text-tinta hover:text-lavanda2 transition-colors"
                   onClick={() => setOpen(false)}
                 >
                   {item.label}
-                </a>
+                  <svg width="14" height="12" viewBox="0 0 14 12" aria-hidden className="text-lavanda">
+                    <path d="M1 6h11M8 1l4 5-4 5" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </Link>
               </li>
             ))}
-            <li>
-              <Link
-                href="/agendar"
-                className="block py-3 font-display text-[22px] text-tijolo"
-                onClick={() => setOpen(false)}
-              >
-                Agendar →
-              </Link>
-            </li>
           </ul>
         </div>
       ) : null}
